@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Creating the link that sends the user to the relative page.
         let fornLink = document.createElement('a');
         fornLink.href = fornitoriAuto[i].url;
+        fornLink.target = '_blank';
 
         // Creting the link's text.
         let fornName = document.createElement('p');
@@ -66,18 +67,26 @@ document.addEventListener('DOMContentLoaded', () => {
         fornSquare.appendChild(fornLogo);
 
         // Creating and appending the key icon.
-        // This links to a 
+        // This creates an alert with the credentials.
         let passImg = document.createElement('img');
+
+        // Checking for the password, if it's needed or not.
         if (fornitoriAuto[i].passwordBool == true) {
+            // If so, fix in place the passwords for the specific website, and append those to the alert.
             let passButton = document.createElement('a');
+            let username = fornitoriAuto[i].username;
+            let password = fornitoriAuto[i].password;
             passButton.addEventListener('click', () => {
-                alert(`Username: ${fornitoriAuto[i].username}\nPassword: ${fornitoriAuto[i].password}`);
+                alert(`Username: ${username}\nPassword: ${password}`);
             })
+
+            // Use the green key icon, and append it.
             passImg.src = greenKey;
             passImg.className += "password required";
             passButton.appendChild(passImg);
             fornSquare.appendChild(passButton);
         } else {
+            // No link, just black key.
             passImg.src = blackKey;
             passImg.className += 'password';
             fornSquare.appendChild(passImg);
