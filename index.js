@@ -1,7 +1,7 @@
 function construct(id, fornArray) {
     let blackKey = './MATERIAL/key.png';
     let greenKey = './MATERIAL/key required.png';
-    
+
     let Body = document.querySelector(id);
     for (i in fornArray) {
         // Creating the square first.
@@ -62,12 +62,14 @@ function construct(id, fornArray) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Search bar definitions.
     const icon = document.querySelector(".icon");
     const search = document.querySelector(".search");
         icon.onclick = function () {
         search.classList.toggle("active");
     };
 
+    // We define the Fornitore class.
     const Fornitore = class {
         constructor(category, name, url, src, passwordBool, username, password, tags) {
           this.category = category;
@@ -81,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Let's dig in deep and add every Fornitore. 
     let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, 'marangoni265', 'marangoni265', []);
     pelloni.tags = ['auto', 'pelloni', 'molle', 'filtri', 'ruote', 'pastiglie', 'distribuzione', 'catena'];
     let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u7 / 136695u8', 'marangoni', []);
