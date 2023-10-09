@@ -84,15 +84,28 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Let's dig in deep and add every Fornitore. 
-    let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, process.env.PELLONI_USERNAME, process.env.PELLONI_PASSWORD, []);
+    let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, 'marangoni265', 'marangoni265', []);
     pelloni.tags = ['auto', 'pelloni', 'molle', 'filtri', 'ruote', 'pastiglie', 'distribuzione', 'catena'];
-    let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, process.env.TECDOC_USERNAME, process.env.TECDOC_PASSWORD, []);
+    let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u8', 'marangoni', []);
     tecdoc.tags = ['auto', 'tecdoc', 'ricambi', 'targa', 'telaio', 'ricerca'];
+    let filtercenter = new Fornitore('Auto', 'FilterCenter', 'https://ecommerce.filtercenter.com/', './LOGOS/filter center.jpg', true, 'C0657', '00500801204', []);
+    filtercenter.tags = ['filter', 'center', 'filtercenter', 'filtri'];
 
     const fornitoriAuto = [
         pelloni,
         tecdoc,
+        filtercenter,
     ];
+
+    fornitoriAuto.sort(function sortForn(fornA, fornB) {
+        if (fornA.name > fornB.name) {
+            return 1;
+        } else if (fornA.name < fornB.name) {
+            return -1;
+        }
+
+        return 0;
+    });
 
     const fornitoriMoto = [];
     const fornitoriBici = [];
