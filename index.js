@@ -86,11 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Let's dig in deep and add every Fornitore.
     // AUTO
     let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, 'marangoni265', 'marangoni265', []);
-    pelloni.tags = ['auto', 'pelloni', 'molle', 'filtri', 'ruote', 'pastiglie', 'distribuzione', 'catena'];
+    pelloni.tags = ['auto', 'pelloni', 'molle', 'filtri', 'ruote', 'pastiglie', 'distribuzione', 'catena', "pelloni ricambi","pelloni","ricambi","pelloni parts","parts pelloni","ricambi pelloni","p","pe","pel","pell","pelloni r","pelloni ri","pelloni ric","pelloni rica","pelloni ricam","pelloni ricamb"];
     let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u8', 'marangoni', []);
-    tecdoc.tags = ['auto', 'tecdoc', 'ricambi', 'targa', 'telaio', 'ricerca'];
+    tecdoc.tags = ['auto', 'tecdoc', 'ricambi', 'targa', 'telaio', 'ricerca', "tecdoc","tec doc","tecdoc parts","tecdoc catalog","tecdoc database","t","te","tec","tecd","tecdo","tecdoc p","tecdoc pa","tecdoc par","tecdoc part"];
     let filtercenter = new Fornitore('Auto', 'FilterCenter', 'https://ecommerce.filtercenter.com/', './LOGOS/filter center.jpg', true, 'C0657', '00500801204', []);
-    filtercenter.tags = ['filter', 'center', 'filtercenter', 'filtri'];
+    filtercenter.tags = ['filter', 'center', 'filtercenter', 'filtri', "filter center","filter center parts","center filters","filters center","f","fi","fil","filt","filte","filter","c","ce","cen","cent","cente","center"];
 
     const fornitoriAuto = [
         pelloni,
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let microfiches = new Fornitore('Moto', 'Microfiches', 'https://it.microfiches.net/', './LOGOS/microfiches.png', false, '', '', []);
-    microfiches.tags = ['microfiches', 'esplosi', 'tavole'];
+    microfiches.tags = ['microfiches', 'esplosi', 'tavole', "microfiches","microfiche","micro fiches","microfilm fiches","m","mi","mic","micr","micro","microf","microfi","microfic","microfich"];
 
     const fornitoriMoto = [
         microfiches
