@@ -83,7 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Let's dig in deep and add every Fornitore. 
+    // Let's dig in deep and add every Fornitore.
+    // AUTO
     let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, 'marangoni265', 'marangoni265', []);
     pelloni.tags = ['auto', 'pelloni', 'molle', 'filtri', 'ruote', 'pastiglie', 'distribuzione', 'catena'];
     let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u8', 'marangoni', []);
@@ -113,10 +114,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const fornitoriMoto = [
         microfiches
     ];
-    
+
+    fornitoriMoto.sort(function sortForn(fornA, fornB) {
+        if (fornA.name > fornB.name) {
+            return 1;
+        } else if (fornA.name < fornB.name) {
+            return -1;
+        }
+
+        return 0;
+    });
+
     const fornitoriBici = [];
+
+    fornitoriBici.sort(function sortForn(fornA, fornB) {
+        if (fornA.name > fornB.name) {
+            return 1;
+        } else if (fornA.name < fornB.name) {
+            return -1;
+        }
+
+        return 0;
+    });
+
     const fornitoriGomme = [];
+
+    fornitoriGomme.sort(function sortForn(fornA, fornB) {
+        if (fornA.name > fornB.name) {
+            return 1;
+        } else if (fornA.name < fornB.name) {
+            return -1;
+        }
+
+        return 0;
+    });
+
     const fornitoriOlio = [];
+
+    fornitoriOlio.sort(function sortForn(fornA, fornB) {
+        if (fornA.name > fornB.name) {
+            return 1;
+        } else if (fornA.name < fornB.name) {
+            return -1;
+        }
+
+        return 0;
+    });
 
     // This is the correct way to concatenate arrays in JS.
     const fornitori = fornitoriAuto.concat(fornitoriMoto).concat(fornitoriBici).concat(fornitoriGomme).concat(fornitoriOlio);
