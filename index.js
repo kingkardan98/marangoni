@@ -84,9 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Let's dig in deep and add every Fornitore. 
-    let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, 'marangoni265', 'marangoni265', []);
+    let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, process.env.PELLONI_USERNAME, process.env.PELLONI_PASSWORD, []);
     pelloni.tags = ['auto', 'pelloni', 'molle', 'filtri', 'ruote', 'pastiglie', 'distribuzione', 'catena'];
-    let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u7 / 136695u8', 'marangoni', []);
+    let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, process.env.TECDOC_USERNAME, process.env.TECDOC_PASSWORD, []);
     tecdoc.tags = ['auto', 'tecdoc', 'ricambi', 'targa', 'telaio', 'ricerca'];
 
     const fornitoriAuto = [
