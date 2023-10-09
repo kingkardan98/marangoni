@@ -107,7 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return 0;
     });
 
-    const fornitoriMoto = [];
+    let microfiches = new Fornitore('Moto', 'Microfiches', 'https://it.microfiches.net/', './LOGOS/microfiches.png', false, '', '', []);
+    microfiches.tags = ['microfiches', 'esplosi', 'tavole'];
+
+    const fornitoriMoto = [
+        microfiches
+    ];
+    
     const fornitoriBici = [];
     const fornitoriGomme = [];
     const fornitoriOlio = [];
