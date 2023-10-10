@@ -6,7 +6,8 @@ def subTags(lst):
     for element in tags:
         if element == '':
             tags.remove(element)
+    tags = list(dict.fromkeys(tags))
     return tags
 
-pelloni = ['auto', 'molle', 'pastiglie', 'barre', 'filtro', 'olio', 'aria', 'abitacolo', 'tergicristallo', 'febi', 'wix', 'brembo']
-print(subTags(pelloni))
+lista = []
+print(subTags(lista))

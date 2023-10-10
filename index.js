@@ -84,9 +84,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Let's dig in deep and add every Fornitore.
-    // AUTO
+    // PELLONI
     let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, 'marangoni265', 'marangoni265', []);
-    pelloni.tags = ['auto', 'pelloni', 'molle', 'filtri', 'ruote', 'pastiglie', 'distribuzione', 'catena', "pelloni ricambi","pelloni","ricambi","pelloni parts","parts pelloni","ricambi pelloni","p","pe","pel","pell","pelloni r","pelloni ri","pelloni ric","pelloni rica","pelloni ricam","pelloni ricamb"];
+    pelloni.tags = ['a', 'au', 'aut', 'auto', 'm', 'mo', 
+    'mol', 'moll', 'molle', 'p', 'pa', 'pas', 'past', 
+    'pasti', 'pastig', 'pastigl', 'pastigli', 'pastiglie', 
+    'b', 'ba', 'bar', 'barr', 'barre', 'f', 'fi', 'fil', 
+    'filt', 'filtr', 'filtro', 'o', 'ol', 'oli', 'olio', 
+    'ar', 'ari', 'aria', 'ab', 'abi', 'abit', 'abita', 'abitac', 
+    'abitaco', 'abitacol', 'abitacolo', 't', 'te', 'ter', 'terg', 
+    'tergi', 'tergic', 'tergicr', 'tergicri', 'tergicris', 
+    'tergicrist', 'tergicrista', 'tergicristal', 'tergicristall', 
+    'tergicristallo', 'fe', 'feb', 'febi', 'w', 'wi', 'wix', 
+    'br', 'bre', 'brem', 'bremb', 'brembo', 'tr', 'tra', 'tras', 
+    'trasm', 'trasmi', 'trasmis', 'trasmiss', 'trasmissi', 'trasmissio', 
+    'trasmission', 'trasmissione', 'r', 'ri', 'ric', 'rica', 'ricam', 'ricamb', 'ricambi'];
+
+    // TECDOC
     let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u8', 'marangoni', []);
     tecdoc.tags = ['auto', 'tecdoc', 'ricambi', 'targa', 'telaio', 'ricerca', "tecdoc","tec doc","tecdoc parts","tecdoc catalog","tecdoc database","t","te","tec","tecd","tecdo","tecdoc p","tecdoc pa","tecdoc par","tecdoc part"];
     let filtercenter = new Fornitore('Auto', 'FilterCenter', 'https://ecommerce.filtercenter.com/', './LOGOS/filter center.jpg', true, 'C0657', '00500801204', []);
