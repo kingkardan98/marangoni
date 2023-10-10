@@ -37,14 +37,6 @@ function construct(id, fornArray) {
 
         // Checking for the password, if it's needed or not.
         if (fornArray[i].passwordBool == true) {
-            // If so, fix in place the passwords for the specific website, and append those to the alert.
-            let passButton = document.createElement('a');
-            let username = fornArray[i].username;
-            let password = fornArray[i].password;
-            passButton.addEventListener('click', () => {
-                alert(`Username: ${username}\nPassword: ${password}`);
-            })
-
             // Use the green key icon, and append it.
             passImg.src = greenKey;
             passImg.className += "password required";
@@ -77,15 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
           this.url = url;
           this.src = src;
           this.passwordBool = passwordBool;
-          this.username = username;
-          this.password = password;
           this.tags = tags
         }
     };
 
     // Let's dig in deep and add every Fornitore.
     // PELLONI
-    let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, 'marangoni265', 'marangoni265', []);
+    let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, []);
     pelloni.tags = ['a', 'au', 'aut', 'auto', 'm', 'mo', 
     'mol', 'moll', 'molle', 'p', 'pa', 'pas', 'past', 
     'pasti', 'pastig', 'pastigl', 'pastigli', 'pastiglie', 
@@ -101,9 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
     'trasmission', 'trasmissione', 'r', 'ri', 'ric', 'rica', 'ricam', 'ricamb', 'ricambi'];
 
     // TECDOC
-    let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u8', 'marangoni', []);
+    let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u8', []);
     tecdoc.tags = ['auto', 'tecdoc', 'ricambi', 'targa', 'telaio', 'ricerca', "tecdoc","tec doc","tecdoc parts","tecdoc catalog","tecdoc database","t","te","tec","tecd","tecdo","tecdoc p","tecdoc pa","tecdoc par","tecdoc part"];
-    let filtercenter = new Fornitore('Auto', 'FilterCenter', 'https://ecommerce.filtercenter.com/', './LOGOS/filter center.jpg', true, 'C0657', '00500801204', []);
+    let filtercenter = new Fornitore('Auto', 'FilterCenter', 'https://ecommerce.filtercenter.com/', './LOGOS/filter center.jpg', true, []);
     filtercenter.tags = ['filter', 'center', 'filtercenter', 'filtri', "filter center","filter center parts","center filters","filters center","f","fi","fil","filt","filte","filter","c","ce","cen","cent","cente","center"];
 
     const fornitoriAuto = [
