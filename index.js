@@ -40,8 +40,7 @@ function construct(id, fornArray) {
             // Use the green key icon, and append it.
             passImg.src = greenKey;
             passImg.className += "password required";
-            passButton.appendChild(passImg);
-            fornSquare.appendChild(passButton);
+            fornSquare.appendChild(passImg);
         } else {
             // No link, just black key.
             passImg.src = blackKey;
