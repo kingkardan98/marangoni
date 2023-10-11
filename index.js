@@ -1,3 +1,13 @@
+function hideRow(row) {
+    row.classList.add('hidden');
+}
+
+function unhideRow(row) {
+    row.classList.remove('hidden');
+}
+
+
+
 function construct(id, fornArray) {
     let blackKey = './MATERIAL/key.png';
     let greenKey = './MATERIAL/key required.png';
@@ -52,6 +62,19 @@ function construct(id, fornArray) {
     }
 }
 
+function tagGen(array) {
+    let tags = [];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j <= array[i].length; j++) {
+            let stringToAppend = array[i].substring(0, j);
+            if (!tags.includes(stringToAppend)) {
+                tags.push(stringToAppend);
+            }
+        }
+    }
+    return tags;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Search bar definitions.
     const icon = document.querySelector(".icon");
@@ -73,32 +96,29 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Let's dig in deep and add every Fornitore.
+
+    /* #region Auto */
     // PELLONI
     let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, []);
-    pelloni.tags = ['a', 'au', 'aut', 'auto', 'm', 'mo', 
-    'mol', 'moll', 'molle', 'p', 'pa', 'pas', 'past', 
-    'pasti', 'pastig', 'pastigl', 'pastigli', 'pastiglie', 
-    'b', 'ba', 'bar', 'barr', 'barre', 'f', 'fi', 'fil', 
-    'filt', 'filtr', 'filtro', 'o', 'ol', 'oli', 'olio', 
-    'ar', 'ari', 'aria', 'ab', 'abi', 'abit', 'abita', 'abitac', 
-    'abitaco', 'abitacol', 'abitacolo', 't', 'te', 'ter', 'terg', 
-    'tergi', 'tergic', 'tergicr', 'tergicri', 'tergicris', 
-    'tergicrist', 'tergicrista', 'tergicristal', 'tergicristall', 
-    'tergicristallo', 'fe', 'feb', 'febi', 'w', 'wi', 'wix', 
-    'br', 'bre', 'brem', 'bremb', 'brembo', 'tr', 'tra', 'tras', 
-    'trasm', 'trasmi', 'trasmis', 'trasmiss', 'trasmissi', 'trasmissio', 
-    'trasmission', 'trasmissione', 'r', 'ri', 'ric', 'rica', 'ricam', 'ricamb', 'ricambi'];
+    pelloni.tags = tagGen(['pelloni', 'auto', 'molle', 'pastiglie', 'barre', 'filtro', 'olio', 'aria', 'abitacolo', 'tergicristallo', 'febi', 'wix', 'brembo', 'trasmissione','ricambi']);
 
     // TECDOC
     let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u8', []);
-    tecdoc.tags = ['auto', 'tecdoc', 'ricambi', 'targa', 'telaio', 'ricerca', "tecdoc","tec doc","tecdoc parts","tecdoc catalog","tecdoc database","t","te","tec","tecd","tecdo","tecdoc p","tecdoc pa","tecdoc par","tecdoc part"];
+    tecdoc.tags = tagGen(['auto', 'tecdoc', 'ricambi', 'targa', 'telaio', 'ricerca']);
+
+    // FILTERCENTER
     let filtercenter = new Fornitore('Auto', 'FilterCenter', 'https://ecommerce.filtercenter.com/', './LOGOS/filter center.jpg', true, []);
-    filtercenter.tags = ['filter', 'center', 'filtercenter', 'filtri', "filter center","filter center parts","center filters","filters center","f","fi","fil","filt","filte","filter","c","ce","cen","cent","cente","center"];
+    filtercenter.tags = tagGen(['filter', 'center', 'filtercenter', 'filtri']);
+
+    // BREMBO
+    let bremboAuto = new Fornitore('Auto', 'Brembo', 'https://www.bremboparts.com/europe/it', 'https://www.bremboparts.com/images/logo.svg', false, []);
+    bremboAuto.tags = tagGen(['brembo', 'configuratore', 'auto', 'pastiglie', 'dischi']);
 
     const fornitoriAuto = [
         pelloni,
         tecdoc,
         filtercenter,
+        bremboAuto,
     ];
 
     fornitoriAuto.sort(function sortForn(fornA, fornB) {
@@ -111,11 +131,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return 0;
     });
 
-    let microfiches = new Fornitore('Moto', 'Microfiches', 'https://it.microfiches.net/', './LOGOS/microfiches.png', false, '', '', []);
-    microfiches.tags = ['microfiches', 'esplosi', 'tavole', "microfiches","microfiche","micro fiches","microfilm fiches","m","mi","mic","micr","micro","microf","microfi","microfic","microfich"];
+    /* #endregion */
 
+    /* #region Moto */
+
+    // MICROFICHES - Esplosi
+    let microfiches = new Fornitore('Moto', 'Microfiches', 'https://it.microfiches.net/', './LOGOS/microfiches.png', false, []);
+    microfiches.tags = tagGen(['microfiches', 'esplosi', 'tavole']);
+
+    // SBS - Configuratore pastiglie
+    let sbs = new Fornitore('Moto', 'SBS', 'https://www.sbs.dk/', './LOGOS/sbs.png', false, []);
+    sbs.tags = tagGen(['sbs', 'configuratore', 'pastiglie', 'moto']);
     const fornitoriMoto = [
-        microfiches
+        microfiches,
+        sbs
     ];
 
     fornitoriMoto.sort(function sortForn(fornA, fornB) {
@@ -128,6 +157,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return 0;
     });
 
+    /* #endregion */
+
+    /* #region Bici */
     const fornitoriBici = [];
 
     fornitoriBici.sort(function sortForn(fornA, fornB) {
@@ -139,6 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return 0;
     });
+
+    /* #endregion */
+
+    /* #region Gomme */
 
     const fornitoriGomme = [];
 
@@ -152,7 +188,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return 0;
     });
 
-    const fornitoriOlio = [];
+    /* #endregion */
+
+    /* #region Olio */
+
+    let castrol = new Fornitore('Olio', 'Castrol', 'https://www.castrol.com/it_it/italy/home/car-engine-oil-and-fluids/motor-oil-and-fluids-finder.html', 'https://www.castrol.com/apps/settings/wcm/designs/refresh/castrol/images/reignite/logo.svg', false, [])
+    castrol.tags = tagGen(['castrol', 'olio', 'configuratore', 'auto', 'moto']);
+
+    const fornitoriOlio = [
+        castrol,
+    ];
 
     fornitoriOlio.sort(function sortForn(fornA, fornB) {
         if (fornA.name > fornB.name) {
@@ -163,6 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return 0;
     });
+
+    /* #endregion */
 
     // This is the correct way to concatenate arrays in JS.
     const fornitori = fornitoriAuto.concat(fornitoriMoto).concat(fornitoriBici).concat(fornitoriGomme).concat(fornitoriOlio);
