@@ -8,7 +8,7 @@
 }
 
 body {
-	background-color: rgb(136, 214, 240);
+	background-color: rgb(255, 217, 0);
 	background-image: url(./MATERIAL/marangoni.png);
 	background-repeat: no-repeat;
 }
@@ -141,7 +141,7 @@ body {
 /* #region Catalogue styling */
 .catalogue {
     position: relative;
-    background-color: orange;
+    background-color: rgb(0, 255, 255);
     border: 1px solid black;
 }
 

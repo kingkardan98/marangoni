@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Bergamaschi - B2B articoli moto di ogni tipo (candele, filtri, pastiglie, dischi, sospensioni)
     let bergamaschi = new Fornitore('Moto', 'Bergamaschi', 'https://auth.bergamaschi.com/oauth2/authorize?client_id=c1026e6e-56d7-48a4-b71b-35cb979faa6d&redirect_uri=https%3A%2F%2Fb2b.bergamaschi.com%2Flogin&response_type=token&response_mode=form_post&state=aG9tZQ==', './MATERIAL/bergamaschi.jpeg', true, []);
-    let commonTags = tagGen(['moto', 'ngk', 'hiflo', 'ferodo', 'pastiglie', 'leve', 'candele', 'motorino', 'avviamento', 'disco', 'freno', 'targa', 'sospensioni', 'statore', 'ricambi', 'batterie', 'yuasa']);
+    let commonTags = tagGen(['moto', 'ngk', 'hiflo', 'ferodo', 'frizione', 'pastiglie', 'leve', 'candele', 'motorino', 'avviamento', 'disco', 'freno', 'targa', 'sospensioni', 'statore', 'ricambi', 'batterie', 'yuasa']);
     bergamaschi.tags = commonTags.concat(tagGen(['bergamaschi']));
 
     // Larsson - come bergamaschi, spedizione rapida
@@ -229,6 +229,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let motocrossMarketing = new Fornitore('Moto', 'MotocrossMarketing', 'https://www.motocrossmarketing.com/login.asp', 'https://www.motocrossmarketing.com/img/motocrossmarketing.png', true, []);
     motocrossMarketing.tags = tagGen(['moto', 'motocross marketing', 'marketing', 'leve', 'lana', 'di', 'roccia', 'vetro', 'fermacopertone', 'bloccacopertone', 'cavo', 'frizione', 'acceleratore', 'freno', 'bottone', 'spugna']);
 
+    // Malossi - Articoli Malossi: molle, massette, frizione, multivar, filtri
+    let malossi = new Fornitore('Moto', 'Malossi', 'https://www.malossicommerce.com/Account/Login?ReturnUrl=%2F', 'https://upload.wikimedia.org/wikipedia/it/c/c8/Malossi.logo.jpg', true, []);
+    malossi.tags = tagGen(['moto', 'malossi', 'massette', 'pistoni', 'gruppo termico', 'multivar', 'frizione', 'cilindro', 'filtro rosso', 'rosso', 'conico']);
+
     const fornitoriMoto = [
         microfiches,
         sbs,
@@ -237,7 +241,8 @@ document.addEventListener('DOMContentLoaded', () => {
         hiflo,
         bergamaschi,
         larsson,
-        motocrossMarketing
+        motocrossMarketing,
+        malossi,
     ];
 
     fornitoriMoto.sort(function sortForn(fornA, fornB) {
