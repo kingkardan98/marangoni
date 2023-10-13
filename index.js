@@ -6,13 +6,30 @@ function unhideRow(row) {
     row.classList.remove('hidden');
 }
 
+function checkRow(row) {
+    let allHidden = true;
+    // Since the first child of the row is the title, we start from i = 1
+    let catalogues = row.querySelectorAll('.catalogue');
+    for (let i = 0; i < catalogues.length; i++) {
+        if (!catalogues[i].classList.contains('hidden')) {
+            allHidden = false;
+        }
+    }
 
+    // If after the check allHidden = true, no catalogues have been found.
+    if (allHidden) {
+        row.classList.add('hidden');
+    } else {
+        row.classList.remove('hidden');
+    }
+}
 
 function construct(id, fornArray) {
     let blackKey = './MATERIAL/key.png';
     let greenKey = './MATERIAL/key required.png';
 
     let Body = document.querySelector(id);
+
     for (i in fornArray) {
         // Creating the square first.
         let fornSquare = document.createElement('div');
@@ -261,5 +278,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
+
+        // Right here, we put the listener for the row.
+        let rows = document.querySelectorAll('.row');
+        rows.forEach((row) => {
+            checkRow(row);
+        });
     })
 })
