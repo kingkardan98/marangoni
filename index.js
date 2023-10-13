@@ -1,3 +1,5 @@
+/* #region Aux functions */
+
 function hideRow(row) {
     row.classList.add('hidden');
 }
@@ -92,14 +94,19 @@ function tagGen(array) {
     return tags;
 }
 
+/* #endregion */
+
 document.addEventListener('DOMContentLoaded', () => {
+    /* #region Search bar */
     // Search bar definitions.
     const icon = document.querySelector(".icon");
     const search = document.querySelector(".search");
         icon.onclick = function () {
         search.classList.toggle("active");
     };
+    /* #endregion */
 
+    /* #region Class definition */
     // We define the Fornitore class.
     const Fornitore = class {
         constructor(category, name, url, src, passwordBool, username, password, tags) {
@@ -111,31 +118,57 @@ document.addEventListener('DOMContentLoaded', () => {
           this.tags = tags
         }
     };
+    /* #endregion */
 
     // Let's dig in deep and add every Fornitore.
 
     /* #region Auto */
-    // PELLONI
+    // PELLONI - Ricambi auto
     let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, []);
     pelloni.tags = tagGen(['pelloni', 'auto', 'molle', 'pastiglie', 'barre', 'filtro', 'olio', 'aria', 'abitacolo', 'tergicristallo', 'febi', 'wix', 'brembo', 'trasmissione','ricambi']);
 
-    // TECDOC
+    // TECDOC - Ricerca ricambi auto
     let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u8', []);
     tecdoc.tags = tagGen(['auto', 'tecdoc', 'ricambi', 'targa', 'telaio', 'ricerca']);
 
-    // FILTERCENTER
+    // FILTERCENTER - Ricambi filtri di ogni tipo
     let filtercenter = new Fornitore('Auto', 'FilterCenter', 'https://ecommerce.filtercenter.com/', './LOGOS/filter center.jpg', true, []);
-    filtercenter.tags = tagGen(['filter', 'center', 'filtercenter', 'filtri']);
+    filtercenter.tags = tagGen(['auto', 'filter', 'center', 'filtercenter', 'filtri']);
 
-    // BREMBO
-    let bremboAuto = new Fornitore('Auto', 'Brembo', 'https://www.bremboparts.com/europe/it', 'https://www.bremboparts.com/images/logo.svg', false, []);
+    // BREMBO - Sistemi frenanti per auto, moto e veicoli commerciali
+    let bremboAuto = new Fornitore('Auto', 'Brembo', 'https://www.bremboparts.com/europe/it', 'https://i.pinimg.com/736x/b7/5f/77/b75f7752c77c78b22f55c29917b51c45.jpg', false, []);
     bremboAuto.tags = tagGen(['brembo', 'configuratore', 'auto', 'pastiglie', 'dischi']);
+
+    //CO.RA - Fornitore auto di barre, tappeti, liquidi ed accessori auto generici
+    let cora = new Fornitore('Auto', 'CORA', 'https://coraweb.coraitaly.com/dbweb/login.phtml', 'https://www.coraitaly.com/images/2019/11/13/logo-cora.png', true, []);
+    cora.tags = tagGen(['auto', 'cora', 'raffreddamento', 'paraflu', 'tappeti', 'barre', 'portasci', 'barre', 'portatutto', 'thule', 'menabo', 'prealpina', 'accessori', 'profumatori', 'lampadine', 'pile', 'duracell']);
+
+    // CoopersFiamm - Configuratore filtri auto Coopers Fiamm
+    let coopersFiammFilters = new Fornitore('Auto', 'CoopersFiaam', 'https://www.sogefifilterdivision.com/catalogues/FO/scripts/accueil.php?zone=FR&catalogue=CPF&lang=IT', 'https://i.ebayimg.com/images/g/3oQAAOSwUKFkjao~/s-l400.png', false, []);
+    coopersFiammFilters.tags = tagGen(['auto', 'coopersfiaam', 'fiaam', 'coopersfiamm', 'fiamm', 'filtri', 'aria', 'olio', 'abitacolo', 'antiparticolato', 'configuratore']);
+
+    // Aldo Romeo - Fornitore Bosch e ricambi auto specifici
+    let aldoRomeo = new Fornitore('Auto', 'AldoRomeo', 'https://aldoromeo.blusys.it/indx.php?p=Login&z=000626&o=access', 'https://www.aldoromeospa.it/wp-content/uploads/2021/06/cropped-aldo-romeo-fav-192x192.png', true, []);
+    aldoRomeo.tags = tagGen(['aldo romeo', 'romeo', 'bosch', 'auto'].concat(coopersFiammFilters.tags));
+
+    // Kuhner - Alternatori e motori avviamento per auto e veicoli commerciali
+    let kuhner = new Fornitore('Auto', 'Kühner', 'https://ecomm.daseurope.com', 'https://www.kuhner.it/img/logo.png', true, []);
+    kuhner.tags = tagGen(['auto', 'kuhner', 'kühner', 'motorini avviamento', 'avviamento', 'starter', 'alternatori']);
+
+    // LAMPA - Accessori di qualsiasi tipo di veicolo, usato per lo più per auto
+    let lampa = new Fornitore('Auto', 'Lampa', 'https://b2b.lampa.it', 'https://www.lampa.it/images/logo.png', true, []);
+    lampa.tags = tagGen(['auto', 'lampa', 'accessori', 'moto', 'camion', 'interni']);
 
     const fornitoriAuto = [
         pelloni,
         tecdoc,
         filtercenter,
         bremboAuto,
+        cora,
+        coopersFiammFilters,
+        aldoRomeo,
+        kuhner,
+        lampa
     ];
 
     fornitoriAuto.sort(function sortForn(fornA, fornB) {
@@ -154,14 +187,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // MICROFICHES - Esplosi
     let microfiches = new Fornitore('Moto', 'Microfiches', 'https://it.microfiches.net/', './LOGOS/microfiches.png', false, []);
-    microfiches.tags = tagGen(['microfiches', 'esplosi', 'tavole']);
+    microfiches.tags = tagGen(['moto', 'microfiches', 'esplosi', 'tavole']);
 
-    // SBS - Configuratore pastiglie
+    // SBS - Configuratore pastiglie Swedish Braking System
     let sbs = new Fornitore('Moto', 'SBS', 'https://www.sbs.dk/', './LOGOS/sbs.png', false, []);
     sbs.tags = tagGen(['sbs', 'configuratore', 'pastiglie', 'moto']);
+
+    // MOTORQUALITY - Fornitore e configuratore sistemi frenanti Brembo
+    let motorquality = new Fornitore('Moto', 'Motorquality', 'https://products.motorquality.it/it/moto', 'https://cdn.worldvectorlogo.com/logos/motor-quality.svg', false, []);
+    motorquality.tags = tagGen(['moto', 'brembo', 'pastiglie', 'dischi', 'kit', 'tubi', 'freno', 'configuratore']);
+
+    // OGNIBENE - Sistemi di trasmissione per moto
+    let ognibene = new Fornitore('Moto', 'Ognibene', 'https://www.ognibenechaintech.com/moto', 'https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-1/311479524_653373452902395_8221949212302286621_n.jpg?stp=dst-jpg_p480x480&_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=og3EQcH33UYAX9oc2me&_nc_ht=scontent-fco2-1.xx&oh=00_AfCyKsoiOVtpPo9t2jq0zsouxmIeggJiRU1lKXUR5GbAJA&oe=652E7CC7', false, []);
+    ognibene.tags = tagGen(['moto', 'trasmissione', 'corona', 'catena', 'pignone', 'kit', 'did']);
+
+    // HIFLOFILTRO - Configuratore filtri moto
+    let hiflo = new Fornitore('Moto', 'HifloFiltro', 'http://www.hiflofiltro.com/catalogue', 'http://www.hiflofiltro.com/fileadmin/res/hf-logo.jpg', false, []);
+    hiflo.tags = tagGen(['moto', 'filtro', 'aria', 'olio', 'hiflo', 'configuratore']);
+
+    // Bergamaschi - B2B articoli moto di ogni tipo (candele, filtri, pastiglie, dischi, sospensioni)
+    let bergamaschi = new Fornitore('Moto', 'Bergamaschi', 'https://auth.bergamaschi.com/oauth2/authorize?client_id=c1026e6e-56d7-48a4-b71b-35cb979faa6d&redirect_uri=https%3A%2F%2Fb2b.bergamaschi.com%2Flogin&response_type=token&response_mode=form_post&state=aG9tZQ==', './MATERIAL/bergamaschi.jpeg', true, []);
+    let commonTags = tagGen(['moto', 'ngk', 'hiflo', 'ferodo', 'pastiglie', 'candele', 'motorino', 'avviamento', 'disco', 'freno', 'targa', 'sospensioni', 'statore', 'ricambi', 'batterie', 'yuasa']);
+    bergamaschi.tags = commonTags.concat(tagGen(['bergamaschi']));
+
+    // Larsson - come bergamaschi, spedizione rapida
+    let larsson = new Fornitore('Moto', 'Larsson', 'https://www.larsson-italia.it/index.html', 'https://www.larsson-italia.it/_assets/105a231517144252ffbbcffd53700136/Images/Defaults/larsson_logo_800_pixels.png', true, []);
+    larsson.tags = commonTags.concat(tagGen(['larsson']));
+
     const fornitoriMoto = [
         microfiches,
-        sbs
+        sbs,
+        motorquality,
+        ognibene,
+        hiflo,
+        bergamaschi,
+        larsson
     ];
 
     fornitoriMoto.sort(function sortForn(fornA, fornB) {
@@ -177,7 +237,13 @@ document.addEventListener('DOMContentLoaded', () => {
     /* #endregion */
 
     /* #region Bici */
-    const fornitoriBici = [];
+    // BRN - Fornitore Bernardi, maggior parte degli articoli da bici
+    let brn = new Fornitore('Bici', 'Bernanrdi', 'https://www.ordinibernardi.it/Account/Login.aspx?ReturnUrl=%2f', 'https://brn.it/wp-content/uploads/2022/12/000000029-1.jpg', true, []);
+    brn.tags = tagGen(['bici', 'copertoni', 'ruote', 'raggi', 'accessori', 'camere', "d'aria", 'aria', 'cestini', 'portapacchi', 'portacesto', 'parafango']);
+
+    const fornitoriBici = [
+        brn
+    ];
 
     fornitoriBici.sort(function sortForn(fornA, fornB) {
         if (fornA.name > fornB.name) {
@@ -193,7 +259,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* #region Gomme */
 
-    const fornitoriGomme = [];
+    let carlini = new Fornitore('Gomme', 'Carlini', 'https://b2b.carlinigomme.com', 'https://b2b.carlinigomme.com/content/files/LOGO%20CARLINI%20LIVE2.jpg', true, []);
+    carlini.tags = tagGen(['gomme', 'carlini', 'pneumatici', "camere d'aria", 'aria', "camera d'aria", 'michelin']);
+
+    const fornitoriGomme = [
+        carlini
+    ];
 
     fornitoriGomme.sort(function sortForn(fornA, fornB) {
         if (fornA.name > fornB.name) {
@@ -209,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* #region Olio */
 
-    let castrol = new Fornitore('Olio', 'Castrol', 'https://www.castrol.com/it_it/italy/home/car-engine-oil-and-fluids/motor-oil-and-fluids-finder.html', 'https://www.castrol.com/apps/settings/wcm/designs/refresh/castrol/images/reignite/logo.svg', false, [])
+    let castrol = new Fornitore('Olio', 'Castrol', 'https://www.castrol.com/it_it/italy/home/car-engine-oil-and-fluids/motor-oil-and-fluids-finder.html', 'https://seeklogo.com/images/C/castrol-logo-FE5807D6DC-seeklogo.com.png', false, [])
     castrol.tags = tagGen(['castrol', 'olio', 'configuratore', 'auto', 'moto']);
 
     const fornitoriOlio = [
@@ -228,6 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* #endregion */
 
+    /* #region Page construction */
     // This is the correct way to concatenate arrays in JS.
     const fornitori = fornitoriAuto.concat(fornitoriMoto).concat(fornitoriBici).concat(fornitoriGomme).concat(fornitoriOlio);
 
@@ -236,6 +308,9 @@ document.addEventListener('DOMContentLoaded', () => {
     construct('#bici', fornitoriBici);
     construct('#gomme', fornitoriGomme);
     construct('#olio', fornitoriOlio);
+    /* #endregion */
+
+    /* #region Searchbar-related page behavior */
 
     let input = document.querySelector('#mysearch');
 
@@ -285,4 +360,5 @@ document.addEventListener('DOMContentLoaded', () => {
             checkRow(row);
         });
     })
+    /* #endregion */
 })
