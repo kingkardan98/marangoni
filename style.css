@@ -7,6 +7,12 @@
     --passwordWidth: 25px;
 }
 
+body {
+	background-color: rgb(136, 214, 240);
+	background-image: url(./MATERIAL/marangoni.png);
+	background-repeat: no-repeat;
+}
+
 .font-48 {
     font-size: 48px;
 }
@@ -27,7 +33,7 @@
 
 /* #region Search bar */
 .search {
-    left: calc(50% - 30px);
+    left: calc(50% - 180px);
 	width: 60px;
 	height: 60px;
 	transform: 0.5s;
