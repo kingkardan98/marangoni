@@ -125,7 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
     /* #region Auto */
     // PELLONI - Ricambi auto
     let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, []);
-    pelloni.tags = tagGen(['pelloni', 'auto', 'molle', 'pastiglie', 'barre', 'filtro', 'olio', 'aria', 'abitacolo', 'tergicristallo', 'febi', 'wix', 'brembo', 'trasmissione','ricambi']);
+    let pelloniCommon = tagGen(['pelloni', 'auto', 'molle', 'pastiglie', 'barre', 'filtro', 'olio', 'aria', 'abitacolo', 'tergicristallo', 'febi', 'wix', 'brembo', 'trasmissione','ricambi']);
+    pelloni.tags = pelloniCommon.concat(tagGen(['additivi']));
 
     // TECDOC - Ricerca ricambi auto
     let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u8', []);
@@ -149,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Aldo Romeo - Fornitore Bosch e ricambi auto specifici
     let aldoRomeo = new Fornitore('Auto', 'AldoRomeo', 'https://aldoromeo.blusys.it/indx.php?p=Login&z=000626&o=access', 'https://www.aldoromeospa.it/wp-content/uploads/2021/06/cropped-aldo-romeo-fav-192x192.png', true, []);
-    aldoRomeo.tags = tagGen(['aldo romeo', 'romeo', 'bosch', 'auto'].concat(coopersFiammFilters.tags));
+    aldoRomeo.tags = tagGen(['aldo romeo', 'romeo', 'bosch', 'auto', 'additivi'].concat(coopersFiammFilters.tags));
 
     // Kuhner - Alternatori e motori avviamento per auto e veicoli commerciali
     let kuhner = new Fornitore('Auto', 'Kühner', 'https://ecomm.daseurope.com', 'https://www.kuhner.it/img/logo.png', true, []);
@@ -158,6 +159,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // LAMPA - Accessori di qualsiasi tipo di veicolo, usato per lo più per auto
     let lampa = new Fornitore('Auto', 'Lampa', 'https://b2b.lampa.it', 'https://www.lampa.it/images/logo.png', true, []);
     lampa.tags = tagGen(['auto', 'lampa', 'accessori', 'moto', 'camion', 'interni']);
+
+    // DRA - Ricambi di carrozzeria per auto e furgoni
+    let dra = new Fornitore('Auto', 'DRA', 'https://ecomm.drasrl.eu/', 'https://ecomm.drasrl.eu/img/dra-2.png', true, []);
+    dra.tags = tagGen(['auto', 'dra', 'specchi', 'vetreria', 'fanali', 'carrozzeria', 'parafanghi', 'alzacristalli', 'lamierato']);
+
+    // RHIAG - Ricambi auto, come pelloni
+    let rhiag = new Fornitore('Auto', 'Rhiag', 'https://ecommerce.rhiag.com/ne/jsp/neLandingPage.jsp?out=', 'https://www.incasgroup.com/wp-content/uploads/2018/01/Rhiag_logo.png', true, []);
+    rhiag.tags = pelloniCommon;
 
     const fornitoriAuto = [
         pelloni,
@@ -168,7 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
         coopersFiammFilters,
         aldoRomeo,
         kuhner,
-        lampa
+        lampa,
+        dra,
+        rhiag
     ];
 
     fornitoriAuto.sort(function sortForn(fornA, fornB) {
@@ -207,12 +218,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Bergamaschi - B2B articoli moto di ogni tipo (candele, filtri, pastiglie, dischi, sospensioni)
     let bergamaschi = new Fornitore('Moto', 'Bergamaschi', 'https://auth.bergamaschi.com/oauth2/authorize?client_id=c1026e6e-56d7-48a4-b71b-35cb979faa6d&redirect_uri=https%3A%2F%2Fb2b.bergamaschi.com%2Flogin&response_type=token&response_mode=form_post&state=aG9tZQ==', './MATERIAL/bergamaschi.jpeg', true, []);
-    let commonTags = tagGen(['moto', 'ngk', 'hiflo', 'ferodo', 'pastiglie', 'candele', 'motorino', 'avviamento', 'disco', 'freno', 'targa', 'sospensioni', 'statore', 'ricambi', 'batterie', 'yuasa']);
+    let commonTags = tagGen(['moto', 'ngk', 'hiflo', 'ferodo', 'pastiglie', 'leve', 'candele', 'motorino', 'avviamento', 'disco', 'freno', 'targa', 'sospensioni', 'statore', 'ricambi', 'batterie', 'yuasa']);
     bergamaschi.tags = commonTags.concat(tagGen(['bergamaschi']));
 
     // Larsson - come bergamaschi, spedizione rapida
     let larsson = new Fornitore('Moto', 'Larsson', 'https://www.larsson-italia.it/index.html', 'https://www.larsson-italia.it/_assets/105a231517144252ffbbcffd53700136/Images/Defaults/larsson_logo_800_pixels.png', true, []);
     larsson.tags = commonTags.concat(tagGen(['larsson']));
+
+    // MOTOCROSS MARKETING - articoli per moto da cross
+    let motocrossMarketing = new Fornitore('Moto', 'MotocrossMarketing', 'https://www.motocrossmarketing.com/login.asp', 'https://www.motocrossmarketing.com/img/motocrossmarketing.png', true, []);
+    motocrossMarketing.tags = tagGen(['moto', 'motocross marketing', 'marketing', 'leve', 'lana', 'di', 'roccia', 'vetro', 'fermacopertone', 'bloccacopertone', 'cavo', 'frizione', 'acceleratore', 'freno', 'bottone', 'spugna']);
 
     const fornitoriMoto = [
         microfiches,
@@ -221,7 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ognibene,
         hiflo,
         bergamaschi,
-        larsson
+        larsson,
+        motocrossMarketing
     ];
 
     fornitoriMoto.sort(function sortForn(fornA, fornB) {
@@ -283,8 +299,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let castrol = new Fornitore('Olio', 'Castrol', 'https://www.castrol.com/it_it/italy/home/car-engine-oil-and-fluids/motor-oil-and-fluids-finder.html', 'https://seeklogo.com/images/C/castrol-logo-FE5807D6DC-seeklogo.com.png', false, [])
     castrol.tags = tagGen(['castrol', 'olio', 'configuratore', 'auto', 'moto']);
 
+    let motul = new Fornitore('Olio', 'Motul', 'https://www.motul.com/cz/en/lubricants?category_id=4null', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Motul_logo.svg/2560px-Motul_logo.svg.png', false, []);
+    motul.tags = castrol.tags;
+
     const fornitoriOlio = [
         castrol,
+        motul
     ];
 
     fornitoriOlio.sort(function sortForn(fornA, fornB) {
