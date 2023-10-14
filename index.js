@@ -84,7 +84,8 @@ function construct(id, fornArray) {
 function tagGen(array) {
     let tags = [];
     for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j <= array[i].length; j++) {
+        // j starts at 1 so it doesn't append empty strings
+        for (let j = 1; j <= array[i].length; j++) {
             let stringToAppend = array[i].substring(0, j);
             if (!tags.includes(stringToAppend)) {
                 tags.push(stringToAppend);

@@ -8,7 +8,7 @@
 }
 
 body {
-	background-color: rgb(3, 3, 102);
+	background-color: rgb(79, 124, 145);
 	background-image: url(./MATERIAL/marangoni.png);
 	background-repeat: no-repeat;
 }
@@ -21,6 +21,7 @@ body {
     text-align: center;
     font-weight: bold;
 	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .gridContainer {
@@ -142,7 +143,7 @@ body {
 /* #region Catalogue styling */
 .catalogue {
     position: relative;
-    background-color: rgba(0, 255, 255, 0.897);
+    background-color: #d2d2d2;
     border: 1px solid black;
 }
 
