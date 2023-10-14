@@ -125,8 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
     /* #region Auto */
     // PELLONI - Ricambi auto
     let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, []);
-    let pelloniCommon = tagGen(['pelloni', 'auto', 'molle', 'pastiglie', 'barre', 'filtro', 'olio', 'aria', 'abitacolo', 'tergicristallo', 'febi', 'wix', 'brembo', 'trasmissione','ricambi']);
-    pelloni.tags = pelloniCommon.concat(tagGen(['additivi']));
+    let pelloniCommon = tagGen(['auto', 'molle', 'pastiglie', 'barre', 'filtro', 'olio', 'aria', 'abitacolo', 'tergicristallo', 'febi', 'wix', 'brembo', 'trasmissione','ricambi']);
+    pelloni.tags = pelloniCommon.concat(tagGen(['pelloni', 'additivi']));
 
     // TECDOC - Ricerca ricambi auto
     let tecdoc = new Fornitore('Auto', 'TecDoc', 'https://web.tecalliance.net/tecdocsw/it/home', './LOGOS/tecdoc.png', true, '136695u8', []);
@@ -166,7 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // RHIAG - Ricambi auto, come pelloni
     let rhiag = new Fornitore('Auto', 'Rhiag', 'https://ecommerce.rhiag.com/ne/jsp/neLandingPage.jsp?out=', 'https://www.incasgroup.com/wp-content/uploads/2018/01/Rhiag_logo.png', true, []);
-    rhiag.tags = pelloniCommon;
+    rhiag.tags = pelloniCommon.concat(tagGen(['rhiag']));
+
+    // TOPCAR - Rivenditore perlopiù di additivi e tergi classic
+    let topcar = new Fornitore('Auto', 'TopCar', 'https://topcaritalia.blusys.it/indx.php?p=Login&z=001602&o=access', 'https://topcaritalia.blusys.it//images/customers/001602/logo-admin.png?_t=20231014', true, []);
+    topcar.tags = tagGen(['auto', 'topcar', 'tergicristallo', 'tergicristalli', 'classic', 'additivi']);
+
 
     const fornitoriAuto = [
         pelloni,
@@ -179,7 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
         kuhner,
         lampa,
         dra,
-        rhiag
+        rhiag,
+        topcar
     ];
 
     fornitoriAuto.sort(function sortForn(fornA, fornB) {
@@ -218,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Bergamaschi - B2B articoli moto di ogni tipo (candele, filtri, pastiglie, dischi, sospensioni)
     let bergamaschi = new Fornitore('Moto', 'Bergamaschi', 'https://auth.bergamaschi.com/oauth2/authorize?client_id=c1026e6e-56d7-48a4-b71b-35cb979faa6d&redirect_uri=https%3A%2F%2Fb2b.bergamaschi.com%2Flogin&response_type=token&response_mode=form_post&state=aG9tZQ==', './MATERIAL/bergamaschi.jpeg', true, []);
-    let commonTags = tagGen(['moto', 'ngk', 'hiflo', 'ferodo', 'frizione', 'pastiglie', 'leve', 'candele', 'motorino', 'avviamento', 'disco', 'freno', 'targa', 'sospensioni', 'statore', 'ricambi', 'batterie', 'yuasa']);
+    let commonTags = tagGen(['moto', 'ngk', 'hiflo', 'ferodo', 'cinghia', 'frizione', 'pastiglie', 'leve', 'candele', 'motorino', 'avviamento', 'disco', 'freno', 'targa', 'sospensioni', 'statore', 'ricambi', 'batterie', 'yuasa']);
     bergamaschi.tags = commonTags.concat(tagGen(['bergamaschi']));
 
     // Larsson - come bergamaschi, spedizione rapida
@@ -233,6 +239,46 @@ document.addEventListener('DOMContentLoaded', () => {
     let malossi = new Fornitore('Moto', 'Malossi', 'https://www.malossicommerce.com/Account/Login?ReturnUrl=%2F', 'https://upload.wikimedia.org/wikipedia/it/c/c8/Malossi.logo.jpg', true, []);
     malossi.tags = tagGen(['moto', 'malossi', 'massette', 'pistoni', 'gruppo termico', 'multivar', 'frizione', 'cilindro', 'filtro rosso', 'rosso', 'conico']);
 
+    // SPARK PLUG CROSS REFERENCE - Tool di conversione per candele di diverse marche
+    let sparkPlug = new Fornitore('Moto', 'SparkPlug', 'https://www.sparkplug-crossreference.com/', 'https://seeklogo.com/images/N/ngk-logo-93069CD40C-seeklogo.com.png', false, []);
+    sparkPlug.tags = tagGen(['moto', 'candele', 'confronto', 'ngk']);
+
+    // BRAKING - Configuratore sistemi frenanti moto
+    let braking = new Fornitore('Moto', 'Braking', 'https://catalogue.braking.com/catalogue/intro.php', 'https://www.braking.com/pub/media/theme_options/default/brakingLogoRosso.jpg', false, []);
+    braking.tags = tagGen(['moto', 'braking', 'dischi', 'pastiglie', 'configuratore']);
+
+    // Dell'Orto - Ricambi specifici per carburatori Dell'Orto
+    let dellOrto = new Fornitore('Moto', "DellOrto", 'http://ricambi.dellorto.it/login', 'http://ricambi.dellorto.it/images/logo.png', true, []);
+    dellOrto.tags = tagGen(['moto', "dell'orto", 'orto', 'carburatore', 'getto', 'kit', 'gigler', 'spillo', 'guarnizioni', 'starter', 'mb', 'galleggiante', 'ricambi']);
+
+    // SGR - Ricambi aftermarket per moto
+    let sgr = new Fornitore('Moto', 'SGR', 'https://www.sgr-it.com/it/ricerca.html', 'https://www.sgr-it.com/images/sgrlogo.jpg', true, []);
+    sgr.tags = tagGen(['moto', 'aftermarket', 'sgr', 'leve', 'cinghia', 'batteria al litio', 'litio', 'pastiglie', 'sbs', 'cavo', 'trasmissione', 'tachimetro', 'filtro', 'ducati', 'supersprox']);
+    
+    // INNTECK - Ricambi moto
+    let innteck = new Fornitore('Moto', 'Innteck', 'https://www.innteckshop.it/index.php?pg=prodotti&cr=1', 'https://www.innteckshop.it/media/immagini/innteck.svg?v=1', true, []);
+    innteck.tags = tagGen(['moto', 'innteck', 'kit', 'paraolio', 'skf', 'tenuta', 'forcella', 'motorex']);
+    
+    // WRS - Ricerca e rivendita ricambi moto, sistemi frenanti
+    let wrs = new Fornitore('Moto', 'WRS', 'https://www.wrs.it/it/', 'https://www.wrs.it//img/wrs-logo-1525446047.jpg', true, []);
+    wrs.tags = tagGen(['moto', 'wrs', 'scarico', 'disco', 'freno', 'pastiglie', 'sospensioni']);
+
+    // GILPI - Ricambi originali Piaggio, KTM e altro
+    let gilpi = new Fornitore('Moto', 'Gilpi', 'https://www.gilpi.it/prod-results/', 'https://www.antoniobeccaria.it/wp-content/uploads/2021/02/Logo_GILPI-150x150.png', true, []);
+    gilpi.tags = tagGen(['moto', 'gilpi', 'piaggio', 'ktm', 'bmw', 'originale', 'ricambi']);
+
+    // NRTeam - Ricambi più che altro per cross
+    let nrteam = new Fornitore('Moto', 'NRTeam', 'https://www.nrteam.it/', 'https://www.nrteam.it/images/top/NRTEAM-logo.png?1', true, []);
+    nrteam.tags = tagGen(['moto', 'nrteam', 'paracolpi', 'paramani', 'contatore', 'mousse', 'sfiato', 'forcella', 'cuffia']);
+
+    // MOTORPARTS - Rivenditore da cui ci riforniamo per di più di Top Performance
+    let motorparts = new Fornitore('Moto', 'Motorparts', 'https://www.motorparts.it/', 'https://www.motorparts.it/gimg/Motorparts_logo.svg', true, []);
+    motorparts.tags = tagGen(['moto', 'motorparts', 'top performance', 'performance', 'pompa', 'acqua', 'minarelli', 'h2o', 'H2O']);
+
+    // PARTS EUROPE - Rivenditore
+    let partsEurope = new Fornitore('Moto', 'PartsEurope', 'https://www.partseurope.eu/en/', 'https://www.partseurope.eu/build/assets/all/images/logo/default.4de3584e.png', true, []);
+    partsEurope.tags = tagGen(['moto', 'parts europe', 'europe', 'ricambi', 'configuratore', 'accessori', 'fanaleria', 'motore', 'carrozzeria', 'freno', 'disco', 'pastiglie']);
+
     const fornitoriMoto = [
         microfiches,
         sbs,
@@ -243,6 +289,16 @@ document.addEventListener('DOMContentLoaded', () => {
         larsson,
         motocrossMarketing,
         malossi,
+        sparkPlug,
+        braking,
+        dellOrto,
+        sgr,
+        innteck,
+        wrs,
+        gilpi,
+        nrteam,
+        motorparts,
+        partsEurope
     ];
 
     fornitoriMoto.sort(function sortForn(fornA, fornB) {
