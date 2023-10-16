@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* #region Auto */
     // PELLONI - Ricambi auto
     let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, []);
-    let pelloniCommon = tagGen(['auto', 'molle', 'pastiglie', 'barre', 'filtro', 'olio', 'aria', 'abitacolo', 'tergicristallo', 'febi', 'wix', 'brembo', 'trasmissione','ricambi']);
+    let pelloniCommon = tagGen(['auto', 'molle', 'pastiglie', 'barre', 'filtro', 'filtri', 'olio', 'aria', 'abitacolo', 'tergicristallo', 'febi', 'wix', 'brembo', 'trasmissione','ricambi']);
     pelloni.tags = pelloniCommon.concat(tagGen(['pelloni', 'additivi']));
 
     // TECDOC - Ricerca ricambi auto
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // HIFLOFILTRO - Configuratore filtri moto
     let hiflo = new Fornitore('Moto', 'HifloFiltro', 'http://www.hiflofiltro.com/catalogue', 'http://www.hiflofiltro.com/fileadmin/res/hf-logo.jpg', false, []);
-    hiflo.tags = tagGen(['moto', 'filtro', 'aria', 'olio', 'hiflo', 'configuratore']);
+    hiflo.tags = tagGen(['moto', 'filtro', 'filtri', 'aria', 'olio', 'hiflo', 'configuratore']);
 
     // Bergamaschi - B2B articoli moto di ogni tipo (candele, filtri, pastiglie, dischi, sospensioni)
     let bergamaschi = new Fornitore('Moto', 'Bergamaschi', 'https://auth.bergamaschi.com/oauth2/authorize?client_id=c1026e6e-56d7-48a4-b71b-35cb979faa6d&redirect_uri=https%3A%2F%2Fb2b.bergamaschi.com%2Flogin&response_type=token&response_mode=form_post&state=aG9tZQ==', './MATERIAL/bergamaschi.jpeg', true, []);
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // SGR - Ricambi aftermarket per moto
     let sgr = new Fornitore('Moto', 'SGR', 'https://www.sgr-it.com/it/login.html', 'https://www.sgr-it.com/images/sgrlogo.jpg', true, []);
-    sgr.tags = tagGen(['moto', 'aftermarket', 'sgr', 'leve', 'cinghia', 'batteria al litio', 'litio', 'pastiglie', 'sbs', 'cavo', 'trasmissione', 'tachimetro', 'filtro', 'ducati', 'supersprox']);
+    sgr.tags = tagGen(['moto', 'aftermarket', 'sgr', 'leve', 'cinghia', 'batteria al litio', 'litio', 'pastiglie', 'sbs', 'cavo', 'trasmissione', 'tachimetro', 'filtro', 'filtri', 'ducati', 'supersprox']);
     
     // INNTECK - Ricambi moto
     let innteck = new Fornitore('Moto', 'Innteck', 'https://www.innteckshop.it/index.php?pg=prodotti&cr=1', 'https://www.innteckshop.it/media/immagini/innteck.svg?v=1', true, []);
@@ -416,18 +416,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else {
             // For every word in input, and for every square on the grid, we check for the tags.
+            let searchTags = [];
             for (i in inputArray) {
+                if (inputArray[i] != ' ') {
+                    searchTags.push(inputArray[i]);
+                }
                 for (j in fornitori) {
-                    // We first isolate the words of the input.
-                    let searchTag = inputArray[i];
-
-                    // And define the square outside the local scopes.
+                    // We define the square outside the local scopes.
                     let squareId = `#${fornitori[j].name}`;
                     let square = document.querySelector(squareId);
 
                     // Then the tags.
                     let tags = fornitori[j].tags;
-                    if (!(tags.includes(searchTag))) {
+                    
+                    // We check that the tags of the square contain all the search words.
+                    let contained = searchTags.every(r => tags.includes(r));
+                    if (!contained) {
                         // I should regather the square from the name.
                         square.classList.add('hidden');
                     } else {
