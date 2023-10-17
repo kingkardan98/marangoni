@@ -97,8 +97,7 @@ function tagGen(array) {
 
 /* #endregion */
 
-document.addEventListener('DOMContentLoaded', () => {
-    /* #region Search bar */
+document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar */
     // Search bar definitions.
     const icon = document.querySelector(".icon");
     const search = document.querySelector(".search");
@@ -207,6 +206,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* #region Moto */
 
+    // R.TECH - Fornitore paramani, 
+    let rtech = new Fornitore('Moto', 'RaceTech', 'https://www.rtechmx.com/', 'https://www.rtechmx.com/pub/media/logo/stores/1/logo-rtech-ok.png', false, []);
+    rtech.tags = tagGen(['moto', 'racetech', 'rtech', 'paramani', 'tappi', 'tappo', 'serbatoio', 'scarico', 'olio', 'tanica', 'taniche']);
+
+    // ATHENA - Fornitore gomme e paraoli di diverso tipo
+    let athena = new Fornitore('Moto', 'Athena', 'https://www.athena.eu/it-it/', 'https://www.athena.eu/images/logo-169.ff3a50f0.svg', true, []);
+    athena.tags = tagGen(['moto', 'athena', 'paraolio', 'paraoli', 'biella', 'bielle', 'pistoni', 'pistone', 'guarnizione', 'guarnizioni', 'motore', 'carter', 'soffietto', 'soffietti']);
+
     // MICROFICHES - Esplosi
     let microfiches = new Fornitore('Moto', 'Microfiches', 'https://it.microfiches.net/', './LOGOS/microfiches.png', false, []);
     microfiches.tags = tagGen(['moto', 'microfiches', 'esplosi', 'tavole']);
@@ -242,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Malossi - Articoli Malossi: molle, massette, frizione, multivar, filtri
     let malossi = new Fornitore('Moto', 'Malossi', 'https://www.malossicommerce.com/Account/Login?ReturnUrl=%2F', 'https://upload.wikimedia.org/wikipedia/it/c/c8/Malossi.logo.jpg', true, []);
-    malossi.tags = tagGen(['moto', 'malossi', 'massette', 'pistoni', 'gruppo termico', 'multivar', 'frizione', 'cilindro', 'filtro rosso', 'rosso', 'conico']);
+    malossi.tags = tagGen(['moto', 'malossi', 'massette', 'pistoni', 'gruppo termico', 'multivar', 'frizione', 'cilindro', 'filtro rosso', 'rosso', 'conico', 'filtri']);
 
     // SPARK PLUG CROSS REFERENCE - Tool di conversione per candele di diverse marche
     let sparkPlug = new Fornitore('Moto', 'SparkPlug', 'https://www.sparkplug-crossreference.com/', 'https://seeklogo.com/images/N/ngk-logo-93069CD40C-seeklogo.com.png', false, []);
@@ -284,6 +291,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let partsEurope = new Fornitore('Moto', 'PartsEurope', 'https://www.partseurope.eu/en/', 'https://www.partseurope.eu/build/assets/all/images/logo/default.4de3584e.png', true, []);
     partsEurope.tags = tagGen(['moto', 'parts europe', 'europe', 'ricambi', 'configuratore', 'accessori', 'fanaleria', 'motore', 'carrozzeria', 'freno', 'disco', 'pastiglie']);
 
+    // PBR - Corone, catene, pignoni specialistici
+    let pbr = new Fornitore('Moto', 'PBR', 'https://www.pbr.it/configuratore', 'https://www.pbr.it/themes/renovate/images/logo.png', false, []);
+    pbr.tags = tagGen(['moto', 'pbr', 'sprockets', 'corona', 'corone', 'catena', 'catene', 'pignone', 'pignoni']);
+
     const fornitoriMoto = [
         microfiches,
         sbs,
@@ -303,7 +314,10 @@ document.addEventListener('DOMContentLoaded', () => {
         gilpi,
         nrteam,
         motorparts,
-        partsEurope
+        partsEurope,
+        pbr,
+        athena,
+        rtech
     ];
 
     fornitoriMoto.sort(function sortForn(fornA, fornB) {
@@ -323,8 +337,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let brn = new Fornitore('Bici', 'Bernanrdi', 'https://www.ordinibernardi.it/Account/Login.aspx?ReturnUrl=%2f', 'https://brn.it/wp-content/uploads/2022/12/000000029-1.jpg', true, []);
     brn.tags = tagGen(['bici', 'copertoni', 'ruote', 'raggi', 'accessori', 'camere', "d'aria", 'aria', 'cestini', 'portapacchi', 'portacesto', 'parafango']);
 
+    // RMS - Fornitore di maggioranza di biciclette e alcuni articoli piaggio
+    let rms = new Fornitore('Bici', 'RMS', 'https://login.rms.it/it/login', 'https://login.rms.it/assets/images/loghi/it/logo-RMS.svg', true, []);
+    rms.tags = tagGen(['bici', 'rms', 'ruote', 'ruota', 'cerchio', 'cerchi', 'piaggio', 'vespa', 'ricambi', 'ricambio']);
+
     const fornitoriBici = [
-        brn
+        brn,
+        rms
     ];
 
     fornitoriBici.sort(function sortForn(fornA, fornB) {
@@ -341,11 +360,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* #region Gomme */
 
+    // CARLINI - Fornitore della maggiore di pneumatici
     let carlini = new Fornitore('Gomme', 'Carlini', 'https://b2b.carlinigomme.com', 'https://b2b.carlinigomme.com/content/files/LOGO%20CARLINI%20LIVE2.jpg', true, []);
     carlini.tags = tagGen(['gomme', 'carlini', 'pneumatici', "camere d'aria", 'aria', "camera d'aria", 'michelin']);
 
+    // PMT - Fornitore di pneumatici da moto
+    let pmt = new Fornitore('Gomme', 'PMT', 'https://business.pmt-tyres.it/il-mio-account/', 'https://business.pmt-tyres.it/wp-content/uploads/2021/07/logo_PMT_sito_business-1-300x57.png', true, []);
+    pmt.tags = tagGen(['moto', 'gomma', 'gomme', 'pneumatico', 'pneumatici']);
+
     const fornitoriGomme = [
-        carlini
+        carlini,
+        pmt
     ];
 
     fornitoriGomme.sort(function sortForn(fornA, fornB) {
