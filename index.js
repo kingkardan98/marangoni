@@ -206,6 +206,18 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
 
     /* #region Moto */
 
+    // ONE - Carene moto
+    let oneCamamoto = new Fornitore('Moto', 'ONE-Camamoto', 'https://www.one-italia.com/wec/#main', 'https://www.one-italia.com/images/logo-one-italia-head.png', true, []);
+    oneCamamoto.tags = tagGen(['moto', 'one', 'camamoto', 'onecamamoto', 'carena', 'carene']);
+
+    // SIFAM - Ricambi vari per moto
+    let sifam = new Fornitore('Moto', 'Sifam', 'https://www.sifam.it/v2/', 'https://www.sifam.it/v2/logo-sifam.png', true, []);
+    sifam.tags = tagGen(['moto', 'sifam', 'ricambio', 'economico']);
+
+    // MENTASTI - Paraoli e ricambi in gomma
+    let mentasti = new Fornitore('Moto', 'Mentasti', './MATERIAL/Sandro-Mentasti-catalogogenerale.pdf#page=5', 'https://www.mentasti.com/wp-content/uploads/2020/03/logo-piccolo.jpg', false, []);
+    mentasti.tags = tagGen(['moto', 'mentasti', 'gomma', 'manopola', 'manopole', 'soffietto', 'soffietti']);
+
     // R.TECH - Fornitore paramani, 
     let rtech = new Fornitore('Moto', 'RaceTech', 'https://www.rtechmx.com/', 'https://www.rtechmx.com/pub/media/logo/stores/1/logo-rtech-ok.png', false, []);
     rtech.tags = tagGen(['moto', 'racetech', 'rtech', 'paramani', 'tappi', 'tappo', 'serbatoio', 'scarico', 'olio', 'tanica', 'taniche']);
@@ -317,7 +329,10 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
         partsEurope,
         pbr,
         athena,
-        rtech
+        rtech,
+        oneCamamoto,
+        sifam,
+        mentasti
     ];
 
     fornitoriMoto.sort(function sortForn(fornA, fornB) {
