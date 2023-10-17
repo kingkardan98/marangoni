@@ -193,9 +193,9 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     ];
 
     fornitoriAuto.sort(function sortForn(fornA, fornB) {
-        if (fornA.name > fornB.name) {
+        if (fornA.name.toUpperCase() > fornB.name.toUpperCase()) {
             return 1;
-        } else if (fornA.name < fornB.name) {
+        } else if (fornA.name.toUpperCase() < fornB.name.toUpperCase()) {
             return -1;
         }
 
@@ -205,6 +205,10 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     /* #endregion */
 
     /* #region Moto */
+
+    // ARROW - Marmitte Moto
+    let arrow = new Fornitore('Moto', 'Arrow', 'https://www.arrow.it/it/', 'https://www.arrow.it/img/newSite/ArrowLogoBlack_Base_600px.svg', false, []);
+    arrow.tags = tagGen(['moto', 'arrow', 'marmitta', 'marmitte', 'silenziatore', 'silenziatori']);
 
     // ONE - Carene moto
     let oneCamamoto = new Fornitore('Moto', 'ONE-Camamoto', 'https://www.one-italia.com/wec/#main', 'https://www.one-italia.com/images/logo-one-italia-head.png', true, []);
@@ -307,7 +311,28 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     let pbr = new Fornitore('Moto', 'PBR', 'https://www.pbr.it/configuratore', 'https://www.pbr.it/themes/renovate/images/logo.png', false, []);
     pbr.tags = tagGen(['moto', 'pbr', 'sprockets', 'corona', 'corone', 'catena', 'catene', 'pignone', 'pignoni']);
 
+    // Leovince - Marmitte moto
+    let leovince = new Fornitore('Moto', 'Leovince', 'https://www.leovince.com/it-it/your-bike', 'https://www.leovince.com/img/logo.svg', false, []);
+    leovince.tags = tagGen(['moto', 'leovince', 'marmitta', 'marmitte', 'silenziatore', 'silenziatori']);
+
+    // Giannelli - marmitte moto
+    let giannelli = new Fornitore('Moto', 'Giannelli', 'https://www.giannelli.com/it/', 'https://www.giannelli.com/img/logo.png', false, []);
+    giannelli.tags = tagGen(['moto', 'giannelli', 'marmitta', 'marmitte', 'silenziatore', 'silenziatori']);
+
+    // MIVV - Marmitte moto
+    let mivv = new Fornitore('Moto', 'MIVV', 'https://mivv.com/', 'https://mivv.com/wp-content/themes/mivv/img/logo-mivv.png', false, []);
+    mivv.tags = tagGen(['moto', 'mivv', 'miw', 'marmitta', 'marmitte', 'silenziatore', 'silenziatori']);
+
+    // AKRAPOVIC - Marmitte moto
+    let akrapovic = new Fornitore('Moto', 'Akrapovic', 'http://www.akrapovic.it/scarichi-per-moto', 'https://logowik.com/content/uploads/images/akrapovic2649.jpg', false, []);
+    akrapovic.tags = tagGen(['moto', 'akrapovic', 'miw', 'marmitta', 'marmitte', 'silenziatore', 'silenziatori']);
+
     const fornitoriMoto = [
+        arrow,
+        leovince,
+        giannelli,
+        mivv,
+        akrapovic,
         microfiches,
         sbs,
         motorquality,
@@ -336,9 +361,9 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     ];
 
     fornitoriMoto.sort(function sortForn(fornA, fornB) {
-        if (fornA.name > fornB.name) {
+        if (fornA.name.toUpperCase() > fornB.name.toUpperCase()) {
             return 1;
-        } else if (fornA.name < fornB.name) {
+        } else if (fornA.name.toUpperCase() < fornB.name.toUpperCase()) {
             return -1;
         }
 
@@ -362,9 +387,9 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     ];
 
     fornitoriBici.sort(function sortForn(fornA, fornB) {
-        if (fornA.name > fornB.name) {
+        if (fornA.name.toUpperCase() > fornB.name.toUpperCase()) {
             return 1;
-        } else if (fornA.name < fornB.name) {
+        } else if (fornA.name.toUpperCase() < fornB.name.toUpperCase()) {
             return -1;
         }
 
@@ -389,9 +414,9 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     ];
 
     fornitoriGomme.sort(function sortForn(fornA, fornB) {
-        if (fornA.name > fornB.name) {
+        if (fornA.name.toUpperCase() > fornB.name.toUpperCase()) {
             return 1;
-        } else if (fornA.name < fornB.name) {
+        } else if (fornA.name.toUpperCase() < fornB.name.toUpperCase()) {
             return -1;
         }
 
@@ -414,9 +439,9 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     ];
 
     fornitoriOlio.sort(function sortForn(fornA, fornB) {
-        if (fornA.name > fornB.name) {
+        if (fornA.name.toUpperCase() > fornB.name.toUpperCase()) {
             return 1;
-        } else if (fornA.name < fornB.name) {
+        } else if (fornA.name.toUpperCase() < fornB.name.toUpperCase()) {
             return -1;
         }
 
