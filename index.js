@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
 
     // ARROW - Marmitte Moto
     let arrow = new Fornitore('Moto', 'Arrow', 'https://www.arrow.it/it/', 'https://www.arrow.it/img/newSite/ArrowLogoBlack_Base_600px.svg', false, []);
-    arrow.tags = tagGen(['moto', 'arrow', 'marmitta', 'marmitte', 'silenziatore', 'silenziatori']);
+    arrow.tags = tagGen(['moto', 'arrow', 'marmitta', 'marmitte', 'espansione', 'espansioni', 'scarico', 'scarichi', 'silenziatore', 'silenziatori']);
     fornitoriMoto.push(arrow);
 
     // ONE - Carene moto
@@ -341,28 +341,38 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
 
     // Leovince - Marmitte moto
     let leovince = new Fornitore('Moto', 'Leovince', 'https://www.leovince.com/it-it/your-bike', 'https://www.leovince.com/img/logo.svg', false, []);
-    leovince.tags = tagGen(['moto', 'leovince', 'marmitta', 'marmitte', 'silenziatore', 'silenziatori']);
+    leovince.tags = tagGen(['moto', 'leovince', 'marmitta', 'marmitte', 'espansione', 'espansioni', 'scarico', 'scarichi', 'silenziatore', 'silenziatori']);
     fornitoriMoto.push(leovince);
 
     // Giannelli - marmitte moto
     let giannelli = new Fornitore('Moto', 'Giannelli', 'https://www.giannelli.com/it/', 'https://www.giannelli.com/img/logo.png', false, []);
-    giannelli.tags = tagGen(['moto', 'giannelli', 'marmitta', 'marmitte', 'silenziatore', 'silenziatori']);
+    giannelli.tags = tagGen(['moto', 'giannelli', 'marmitta', 'marmitte', 'espansione', 'espansioni', 'scarico', 'scarichi', 'silenziatore', 'silenziatori']);
     fornitoriMoto.push(giannelli);
 
     // MIVV - Marmitte moto
     let mivv = new Fornitore('Moto', 'MIVV', 'https://mivv.com/', 'https://mivv.com/wp-content/themes/mivv/img/logo-mivv.png', false, []);
-    mivv.tags = tagGen(['moto', 'mivv', 'miw', 'marmitta', 'marmitte', 'silenziatore', 'silenziatori']);
+    mivv.tags = tagGen(['moto', 'mivv', 'miw', 'marmitta', 'marmitte', 'espansione', 'espansioni', 'scarico', 'scarichi', 'silenziatore', 'silenziatori']);
     fornitoriMoto.push(mivv);
 
     // AKRAPOVIC - Marmitte moto
     let akrapovic = new Fornitore('Moto', 'Akrapovic', 'http://www.akrapovic.it/scarichi-per-moto', 'https://logowik.com/content/uploads/images/akrapovic2649.jpg', false, []);
-    akrapovic.tags = tagGen(['moto', 'akrapovic', 'miw', 'marmitta', 'marmitte', 'silenziatore', 'silenziatori']);
+    akrapovic.tags = tagGen(['moto', 'akrapovic', 'miw', 'marmitta', 'marmitte', 'espansione', 'espansioni', 'scarico', 'scarichi', 'silenziatore', 'silenziatori']);
     fornitoriMoto.push(akrapovic);
 
     // POLINI - Ricambi scooter
     let polini = new Fornitore('Moto', 'Polini', 'https://polini.shop/', 'https://polini.shop/skin/frontend/deep/default/images/polini_logo.png', false, []);
     polini.tags = tagGen(['moto', 'polini', 'collettori', 'filtri', 'filtro', 'conico', 'carburatore', 'getto', 'massette']);
     fornitoriMoto.push(polini);
+
+    // TEKNO ETRE SAS - Collettori
+    let etre = new Fornitore('Moto', 'ETRE', 'http://www.teknoetre.it/Elencoprodotti/Elenco%20prodotti.htm', 'http://www.teknoetre.it/Images/marchio-2006-teknoetre.jpg', false, []);
+    etre.tags = tagGen(['etre', 'tekno etre', 'moto', 'collettore', 'collettori']);
+    fornitoriMoto.push(etre);
+
+    // SUNSTAR - Dishchi freno
+    let sunstar = new Fornitore('Moto', 'Sunstar', 'https://www.sunstarmoto.com/it/catalogue/intro.php', 'https://cdn.shopify.com/s/files/1/0582/9407/5555/t/2/assets/pf-f8c10f15--sunstarlogotext.png?v=1626263463', false, []);
+    sunstar.tags = tagGen(['moto', 'sunstar', 'disco', 'dischi', 'pastiglia', 'pastiglie']);
+    fornitoriMoto.push(sunstar);
 
     /* #endregion */
 
