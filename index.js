@@ -108,7 +108,8 @@ function tagGen(array) {
 
 /* #endregion */
 
-document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar */
+document.addEventListener('DOMContentLoaded', () => {    
+    /* #region Search bar */
     // Search bar definitions.
     const icon = document.querySelector(".icon");
     const search = document.querySelector(".search");
@@ -164,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
 
     // CoopersFiamm - Configuratore filtri auto Coopers Fiamm
     let coopersFiammFilters = new Fornitore('Auto', 'CoopersFiaam', 'https://www.sogefifilterdivision.com/catalogues/FO/scripts/accueil.php?zone=FR&catalogue=CPF&lang=IT', 'https://i.ebayimg.com/images/g/3oQAAOSwUKFkjao~/s-l400.png', false, []);
-    coopersFiammFilters.tags = tagGen(['auto', 'coopersfiaam', 'fiaam', 'coopersfiamm', 'fiamm', 'filtri', 'aria', 'olio', 'abitacolo', 'antiparticolato', 'configuratore']);
+    coopersFiammFilters.tags = tagGen(['auto', 'coopersfiaam', 'fiaam', 'coopersfiaam', 'fiaam', 'filtri', 'aria', 'olio', 'abitacolo', 'antiparticolato', 'configuratore']);
     fornitoriAuto.push(coopersFiammFilters);
 
     // Aldo Romeo - Fornitore Bosch e ricambi auto specifici
@@ -201,12 +202,32 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     let japanparts = new Fornitore('Auto', 'JapanParts', 'https://www.japanparts.it/it/#search-products', 'https://www.japanparts.it/assets/img/test.png', false, []);
     japanparts.tags = tagGen(['auto', 'japan', 'parts', 'giapponese', 'giapponesi']);
     fornitoriAuto.push(japanparts);
+    
+    // FIAMM - Configuratore batteria
+    let fiamm = new Fornitore('Auto', 'FIAMM', 'https://web2.carparts-cat.com/default.aspx?11=130&14=7&1115=1&1281=17=0&10=3ED3D22FCB4844DD800B087EA0D73419130007&12=100', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/FIAMM_-_Logo.svg/1200px-FIAMM_-_Logo.svg.png', false, []);
+    fiamm.tags = tagGen(['auto', 'fiamm', 'batteria', 'batterie', 'avviamento', 'elettrico']);
+    fornitoriAuto.push(fiamm);
 
     /* #endregion */
 
     /* #region Moto */
 
     let fornitoriMoto = [];
+
+    // GUBELLINI - Ammortizzatori e forcelle
+    let gubellini = new Fornitore('Moto', 'Gubellini', 'https://www.fggubellini.com/it/', 'https://www.fggubellini.com/img/fg-gubellini-suspensions-logo-1487338999.jpg', false, []);
+    gubellini.tags = tagGen(['moto', 'gubellini', 'ammortizzatore', 'ammortizzatori', 'sospensione', 'sospensioni', 'molla', 'molle', 'forcella', 'forcelle']);
+    fornitoriMoto.push(gubellini);
+
+    // BITUBO - Ammortizzatori e forcelle
+    let bitubo = new Fornitore('Moto', 'Bitubo', 'https://www.bitubo.com/Bitubo/cms/ITA/cerca-per-la-tua-moto.html', 'https://www.bitubo.com/Bitubo/templates/SERVLET_Prova/BTB_LOGO.png', false, []);
+    bitubo.tags = tagGen(['moto', 'bitubo', 'ammortizzatore', 'ammortizzatori', 'sospensione', 'sospensioni', 'molla', 'molle', 'forcella', 'forcelle']);
+    fornitoriMoto.push(bitubo);
+
+    // ANDREANI - Ammortizzatori e forcelle
+    let andreani = new Fornitore('Moto', 'Andreani', 'https://moto.andreanigroup.com/', 'https://moto.andreanigroup.com/wp-content/uploads/2022/05/Andreani.png', false, []);
+    andreani.tags = tagGen(['moto', 'bitubo', 'ammortizzatore', 'ammortizzatori', 'sospensione', 'sospensioni', 'molla', 'molle', 'forcella', 'forcelle', 'marmitta', 'marmitte', 'mivv']);
+    fornitoriMoto.push(andreani);
 
     // ARROW - Marmitte Moto
     let arrow = new Fornitore('Moto', 'Arrow', 'https://www.arrow.it/it/', 'https://www.arrow.it/img/newSite/ArrowLogoBlack_Base_600px.svg', false, []);
@@ -326,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
 
     // MOTORPARTS - Rivenditore da cui ci riforniamo per di più di Top Performance
     let motorparts = new Fornitore('Moto', 'Motorparts', 'https://www.motorparts.it/', 'https://www.motorparts.it/gimg/Motorparts_logo.svg', true, []);
-    motorparts.tags = tagGen(['moto', 'motorparts', 'top performance', 'performance', 'pompa', 'acqua', 'minarelli', 'h2o', 'H2O']);
+    motorparts.tags = tagGen(['moto', 'leovince', 'motorparts', 'top performance', 'performance', 'pompa', 'acqua', 'minarelli', 'h2o', 'H2O']);
     fornitoriMoto.push(motorparts);
 
     // PARTS EUROPE - Rivenditore
@@ -384,6 +405,31 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     far.tags = tagGen(['moto', 'far', 'specchio', 'specchi', 'specchietto', 'specchietti', 'frecce', 'freccia', 'led']);
     fornitoriMoto.push(far);
 
+    // BIONDI - Parabrezza moto
+    let biondi = new Fornitore('Moto', 'Biondi', 'https://www.biondiaccessori.it/', 'https://www.biondiaccessori.it/wp-content/uploads/2018/08/logo-biondi-accessori-moto-scooter.png', false, []);
+    biondi.tags = tagGen(['moto', 'biondi', 'parabrezza', 'telo', 'scooter', 'copriscooter', 'tappeto', 'tappeti']);
+    fornitoriMoto.push(biondi);
+
+    // FACO - Portapacchi e parabrezza
+    let faco = new Fornitore('Moto', 'Faco', 'http://www.facosrl.com/scooter/?Tipo=1&CodCat=1', 'http://faco.next-informatica.it/wp-content/uploads/2021/09/Logo.png', false, []);
+    faco.tags = tagGen(['moto', 'faco', 'parabrezza', 'portapacchi']);
+    fornitoriMoto.push(faco);
+
+    // GIVI - Portapacchi e accessori
+    let givi = new Fornitore('Moto', 'GIVI', 'https://www.givi.it/per-la-tua-moto', 'https://www.givi.it/img/logo.png', false, []);
+    givi.tags = tagGen(['moto', 'givi', 'portapacchi', 'accessori']);
+    fornitoriMoto.push(givi);
+
+    // FASTER96 - Portatarghe, cupolini
+    let faster96 = new Fornitore('Moto', 'Faster96', 'https://www.faster96.com/', 'https://www.faster96.com/images/logo_Faster_96.jpg', true, []);
+    faster96.tags = tagGen(['moto', 'faster96', 'cupolino', 'cupolini', 'portatarga', 'portatarghe', 'pieghevole', 'pieghevoli']);
+    fornitoriMoto.push(faster96);
+
+    // YUASA - Configuratore batteria
+    let yuasa = new Fornitore('Moto', 'YUASA', 'https://www.yuasa.it/', 'https://www.yuasa.it/skin/frontend/yuasa/default/images/logo-yuasa-gs-hq.png', false, []);
+    yuasa.tags = tagGen(['moto', 'yuasa', 'batteria', 'batterie']);
+    fornitoriMoto.push(yuasa);
+
     /* #endregion */
 
     /* #region Bici */
@@ -432,6 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     /* #endregion */
 
     /* #region Page construction */
+    // We sort all the arrays, before sending them off for rendering.
     fornitoriAuto = sortForn(fornitoriAuto);
     fornitoriMoto = sortForn(fornitoriMoto);
     fornitoriBici = sortForn(fornitoriBici);
@@ -439,15 +486,14 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     fornitoriOlio = sortForn(fornitoriOlio);
 
     // This is the correct way to concatenate arrays in JS.
-    
     const fornitori = fornitoriAuto.concat(fornitoriMoto).concat(fornitoriBici).concat(fornitoriGomme).concat(fornitoriOlio);
 
+    // And now we construct every section.
     construct('#auto', fornitoriAuto);
     construct('#moto', fornitoriMoto);
     construct('#bici', fornitoriBici);
     construct('#gomme', fornitoriGomme);
     construct('#olio', fornitoriOlio);
-
 
     /* #endregion */
 
