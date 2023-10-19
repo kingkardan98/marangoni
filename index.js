@@ -374,6 +374,16 @@ document.addEventListener('DOMContentLoaded', () => {    /* #region Search bar *
     sunstar.tags = tagGen(['moto', 'sunstar', 'disco', 'dischi', 'pastiglia', 'pastiglie']);
     fornitoriMoto.push(sunstar);
 
+    // NG - Dischi freno
+    let ng = new Fornitore('Moto', 'NG', 'https://ngbrakes.com/en/catalog/', 'https://ngbrakes.com/wp-content/uploads/2022/05/Logo-NG-transparente-20222.png', false, []);
+    ng.tags = tagGen(['moto', 'ng', 'disco', 'dischi', 'freno', 'freni']);
+    fornitoriMoto.push(ng);
+
+    // FAR - Specchietti e frecce moto
+    let far = new Fornitore('Moto', 'FAR', 'http://93.39.77.114/SilverLakeMe/Login.aspx', 'http://93.39.77.114/SilverLakeMe/images/LogoFar.png', true, []);
+    far.tags = tagGen(['moto', 'far', 'specchio', 'specchi', 'specchietto', 'specchietti', 'frecce', 'freccia', 'led']);
+    fornitoriMoto.push(far);
+
     /* #endregion */
 
     /* #region Bici */
