@@ -1,3 +1,5 @@
+// Copyright © 2016 kingkardan98
+
 /* #region Aux functions */
 function sortForn(array) {
     return array.sort((fornA, fornB) => {
@@ -598,4 +600,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     })
     /* #endregion */
+
+    // Copyright © 2016 kingkardan98
 })
