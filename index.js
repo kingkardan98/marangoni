@@ -137,6 +137,36 @@ document.addEventListener('DOMContentLoaded', () => {
     /* #region Auto */
     let fornitoriAuto = [];
 
+    // BEM CODES - Genera codici per batterie a centralina elettronica
+    let bem = new Fornitore('Auto', 'FIAMM-Codici', 'https://services.fiamm.com/FiammBEMCodes/Codes/Create', 'https://www.fiamm.com/fileadmin/_processed_/d/f/csm_Logo_FIAMM_YWOE_flag_eb1a1c52dd.png', true, []);
+    bem.tags = tagGen(['auto', 'bem', 'fiamm', 'codici', 'centralina', 'codice', 'elettronica', 'start', 'stop', 'start e stop']);
+    fornitoriAuto.push(bem);
+
+    // MENABO - Accessori da tetto / configuratore
+    let menabo = new Fornitore('Auto', 'Menabo', 'https://eu.menabocaraccessories.com/ita/home-ita', 'https://eu.menabocaraccessories.com/pub/media/logo/default/logobianco.png', false, []);
+    menabo.tags = tagGen(['auto', 'menabo', 'portatutto', 'barra', 'barre', 'portapacchi', 'tetto', 'railing', 'configuratore', 'portabici', 'portasci']);
+    fornitoriAuto.push(menabo);
+
+    // LA PREALPINA - Accessori da tetto / configuratore
+    let laPrealpina = new Fornitore('Auto', 'Prealpina', 'https://www.laprealpina.net/it/guida-all-acquisto', 'https://www.laprealpina.net/themes/Blulab201508/img/_brand/brand-laprealpina.png', false, []);
+    laPrealpina.tags = tagGen(['auto', 'la prealpina', 'prealpina', 'portatutto', 'barra', 'barre', 'portapacchi', 'tetto', 'railing', 'configuratore', 'portabici', 'portasci']);
+    fornitoriAuto.push(laPrealpina);
+
+    // DAYCO - Sistemi di distribuzione veicoli
+    let dayco = new Fornitore('Auto', 'Dayco', 'https://www.daycoaftermarket.com/it/catalog/', 'https://www.daycoaftermarket.com/wp-content/uploads/Dayco_Logo_MFA_White_Header.png', false, []);
+    dayco.tags = tagGen(['auto', 'dayco', 'cinghia', 'cinghie',' distribuzione', 'kit', 'tendicinghia', 'galoppino', 'raffreddamento', 'pompa', 'acqua', 'cuscinetto', 'cuscinetti', 'ruota', 'biella', 'bielle']);
+    fornitoriAuto.push(dayco);
+
+    // THULE - Configuratore barre portatutto
+    let thule = new Fornitore('Auto', 'Thule', 'https://www.thule.com/it-it/roof-rack/car-roof-racks', 'https://seekvectorlogo.com/wp-content/uploads/2018/03/thule-sweden-vector-logo.png', false, []);
+    thule.tags = tagGen(['auto', 'thule', 'portatutto', 'barra', 'barre', 'portapacchi', 'tetto', 'railing', 'configuratore', 'portabici']);
+    fornitoriAuto.push(thule);
+
+    // KONIG - Configuratore catene auto
+    let konig = new Fornitore('Auto', 'König', 'https://www.konigchain.com/it/configurator/', 'https://www.konigchain.com/typo3conf/ext/konig_base/Resources/Public/Icons/logo_Konig_2016_BlackGray.svg', false, []);
+    konig.tags = tagGen(['auto', 'konig', 'catene', 'neve', 'configuratore']);
+    fornitoriAuto.push(konig);
+
     // PELLONI - Ricambi auto
     let pelloni = new Fornitore('Auto', 'Pelloni', 'http://93.55.121.253/boa/login.php4', './LOGOS/pelloni.png', true, []);
     let pelloniCommon = tagGen(['auto', 'molle', 'pastiglie', 'barre', 'filtro', 'filtri', 'olio', 'aria', 'abitacolo', 'tergicristallo', 'febi', 'wix', 'brembo', 'trasmissione','ricambi']);
@@ -214,6 +244,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let fornitoriMoto = [];
 
+    // ARIETE - Paraoli forcella
+    let ariete = new Fornitore('Moto', 'Ariete', 'https://www.ariete.com/ari-search/', 'https://www.ariete.com/wp-content/uploads/2021/08/ARIETE-LOGO-e1629708673194.png', false, []);
+    ariete.tags = tagGen(['moto', 'ariete', 'paraolio', 'forcella']);
+    fornitoriMoto.push(ariete);
+
+    // CRYSTAL MOTOR - Parabrezza per moto
+    let crystalMotor = new Fornitore('Moto', 'CrystalMoto', 'https://ecomm.crystalmotor.it/home', 'https://ecomm.crystalmotor.it/img/logo2.png', true, []);
+    crystalMotor.tags = tagGen(['moto', 'crystal motor', 'motor', 'parabrezza', 'scooter']);
+    fornitoriMoto.push(crystalMotor);
+
     // GUBELLINI - Ammortizzatori e forcelle
     let gubellini = new Fornitore('Moto', 'Gubellini', 'https://www.fggubellini.com/it/', 'https://www.fggubellini.com/img/fg-gubellini-suspensions-logo-1487338999.jpg', false, []);
     gubellini.tags = tagGen(['moto', 'gubellini', 'ammortizzatore', 'ammortizzatori', 'sospensione', 'sospensioni', 'molla', 'molle', 'forcella', 'forcelle']);
@@ -271,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // MOTORQUALITY - Fornitore e configuratore sistemi frenanti Brembo
     let motorquality = new Fornitore('Moto', 'Motorquality', 'https://products.motorquality.it/it/moto', 'https://cdn.worldvectorlogo.com/logos/motor-quality.svg', false, []);
-    motorquality.tags = tagGen(['moto', 'brembo', 'pastiglie', 'dischi', 'kit', 'tubi', 'freno', 'configuratore']);
+    motorquality.tags = tagGen(['moto', 'brembo', 'motorquality', 'pastiglie', 'dischi', 'kit', 'tubi', 'freno', 'configuratore']);
     fornitoriMoto.push(motorquality);
 
     // OGNIBENE - Sistemi di trasmissione per moto
