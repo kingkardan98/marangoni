@@ -244,6 +244,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let fornitoriMoto = [];
 
+    // DOMINO - Manopole
+    let domino = new Fornitore('Moto', 'Tommaselli', 'https://www.domino-group.com/reserved-area/', 'https://www.domino-group.com/tommaselli/img/logo/Logo-Tommaselli.png', true, []);
+    domino.tags = tagGen(['moto', 'domino', 'tommaselli', 'manopola', 'manopole', 'comando', 'comandi', 'gas', 'freno', 'leva', 'leve', 'rapido', 'atv', 'a leva']);
+    fornitoriMoto.push(domino);
+
     // ARIETE - Paraoli forcella
     let ariete = new Fornitore('Moto', 'Ariete', 'https://www.ariete.com/ari-search/', 'https://www.ariete.com/wp-content/uploads/2021/08/ARIETE-LOGO-e1629708673194.png', false, []);
     ariete.tags = tagGen(['moto', 'ariete', 'paraolio', 'forcella']);
