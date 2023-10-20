@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let fornitoriAuto = [];
 
     // BEM CODES - Genera codici per batterie a centralina elettronica
-    let bem = new Fornitore('Auto', 'FIAMM-Codici', 'https://services.fiamm.com/FiammBEMCodes/Codes/Create', 'https://www.fiamm.com/fileadmin/_processed_/d/f/csm_Logo_FIAMM_YWOE_flag_eb1a1c52dd.png', true, []);
+    let bem = new Fornitore('Auto', 'FIAMM-Codici', 'https://services.fiamm.com/FiammBEMCodes/login?BRAND=FIAMM&LANG=IT', 'https://www.fiamm.com/fileadmin/_processed_/d/f/csm_Logo_FIAMM_YWOE_flag_eb1a1c52dd.png', true, []);
     bem.tags = tagGen(['auto', 'bem', 'fiamm', 'codici', 'centralina', 'codice', 'elettronica', 'start', 'stop', 'start e stop']);
     fornitoriAuto.push(bem);
 
