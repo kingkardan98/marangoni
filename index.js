@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Aldo Romeo - Fornitore Bosch e ricambi auto specifici
     let aldoRomeo = new Fornitore('Auto', 'AldoRomeo', 'https://aldoromeo.blusys.it/indx.php?p=Login&z=000626&o=access', 'https://www.aldoromeospa.it/wp-content/uploads/2021/06/cropped-aldo-romeo-fav-192x192.png', true, []);
-    aldoRomeo.tags = tagGen(['aldo romeo', 'romeo', 'bosch', 'auto', 'additivi'].concat(coopersFiammFilters.tags));
+    aldoRomeo.tags = tagGen(['aldo romeo', 'dayco', 'romeo', 'bosch', 'auto', 'additivi'].concat(coopersFiammFilters.tags));
     fornitoriAuto.push(aldoRomeo);
 
     // Kuhner - Alternatori e motori avviamento per auto e veicoli commerciali
