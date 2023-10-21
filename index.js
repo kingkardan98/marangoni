@@ -423,7 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fornitoriMoto.push(mivv);
 
     // AKRAPOVIC - Marmitte moto
-    let akrapovic = new Fornitore('Moto', 'Akrapovic', 'http://www.akrapovic.it/scarichi-per-moto', 'https://logowik.com/content/uploads/images/akrapovic2649.jpg', false, []);
+    let akrapovic = new Fornitore('Moto', 'Akrapovic', 'https://www.akrapovic.com/en/moto', 'https://logowik.com/content/uploads/images/akrapovic2649.jpg', false, []);
     akrapovic.tags = tagGen(['moto', 'akrapovic', 'miw', 'marmitta', 'marmitte', 'espansione', 'espansioni', 'scarico', 'scarichi', 'silenziatore', 'silenziatori']);
     fornitoriMoto.push(akrapovic);
 
