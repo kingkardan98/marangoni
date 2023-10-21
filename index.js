@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // OGNIBENE - Sistemi di trasmissione per moto
     let ognibene = new Fornitore('Moto', 'Ognibene', 'https://www.ognibenechaintech.com/moto', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScqsjB4Yo4Y3QXQnsZyDQHDwzRl8TsyOEiPTIXibOP&s', false, []);
-    ognibene.tags = tagGen(['moto', 'trasmissione', 'corona', 'catena', 'pignone', 'kit', 'did']);
+    ognibene.tags = tagGen(['moto', 'ognibene', 'trasmissione', 'corona', 'catena', 'pignone', 'kit', 'did']);
     fornitoriMoto.push(ognibene);
 
     // HIFLOFILTRO - Configuratore filtri moto
