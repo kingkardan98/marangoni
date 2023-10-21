@@ -514,13 +514,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let fornitoriOlio = [];
 
+    // CASTROL - Configuratore Castrol
     let castrol = new Fornitore('Olio', 'Castrol', 'https://www.castrol.com/it_it/italy/home/car-engine-oil-and-fluids/motor-oil-and-fluids-finder.html', 'https://seeklogo.com/images/C/castrol-logo-FE5807D6DC-seeklogo.com.png', false, [])
     castrol.tags = tagGen(['castrol', 'olio', 'configuratore', 'auto', 'moto']);
     fornitoriOlio.push(castrol);
 
+    // MOTUL - Configuratore Motul
     let motul = new Fornitore('Olio', 'Motul', 'https://www.motul.com/cz/en/lubricants?category_id=4null', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Motul_logo.svg/2560px-Motul_logo.svg.png', false, []);
-    motul.tags = castrol.tags;
+    motul.tags = tagGen(['motul', 'olio', 'configuratore', 'auto', 'moto']);
     fornitoriOlio.push(motul);
+
+    // PETRONAS - Configuratore Petronas
+    let petronas = new Fornitore('Olio', 'Petronas', 'https://it.pli-petronas.com/it/lubrificanti#/italy', 'https://cdn.pli-petronas.com/s3fs-public/logo_petronas_%20horizontal.png?VersionId=ZS3snfY9lFv1AfX3fxi8pk_83RZUSOEN', false, []);
+    petronas.tags = tagGen(['petronas', 'olio', 'configuratore', 'auto', 'moto']);
+    fornitoriOlio.push(petronas);
 
     /* #endregion */
 
