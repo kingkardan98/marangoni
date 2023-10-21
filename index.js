@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // NRTeam - Ricambi più che altro per cross
     let nrteam = new Fornitore('Moto', 'NRTeam', 'https://www.nrteam.it/', 'https://www.nrteam.it/images/top/NRTEAM-logo.png?1', true, []);
-    nrteam.tags = tagGen(['moto', 'nrteam', 'paracolpi', 'paramani', 'contatore', 'mousse', 'sfiato', 'forcella', 'cuffia']);
+    nrteam.tags = tagGen(['moto', 'nrteam', 'scarico', 'scarichi', 'paracolpi', 'paramani', 'contatore', 'mousse', 'sfiato', 'forcella', 'cuffia']);
     fornitoriMoto.push(nrteam);
 
     // MOTORPARTS - Rivenditore da cui ci riforniamo per di più di Top Performance
