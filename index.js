@@ -387,6 +387,11 @@ document.addEventListener('DOMContentLoaded', () => {
     gilpi.tags = tagGen(['moto', 'gilpi', 'piaggio', 'ktm', 'bmw', 'originale', 'ricambi']);
     fornitoriMoto.push(gilpi);
 
+    // BUZZETTI - Cavalletti, molle, pedali, attrezzi
+    let buzzetti = new Fornitore('Moto', 'Buzzetti', 'https://buzzetti.com/', 'https://buzzetti.com/wp-content/uploads/2022/04/cropped-Buzzetti-Logo-provv.png', false, []);
+    buzzetti.tags = tagGen(['moto', 'buzzetti', 'leve', 'cavalletto', 'cavalletti', 'molla', 'molle', 'pedana', 'pedane', 'pedali', 'pedale', 'levagomma', 'levagomme', 'attrezzo', 'attrezzi']);
+    fornitoriMoto.push(buzzetti);
+
     // NRTeam - Ricambi più che altro per cross
     let nrteam = new Fornitore('Moto', 'NRTeam', 'https://www.nrteam.it/', 'https://www.nrteam.it/images/top/NRTEAM-logo.png?1', true, []);
     nrteam.tags = tagGen(['moto', 'nrteam', 'scarico', 'scarichi', 'paracolpi', 'paramani', 'contatore', 'mousse', 'sfiato', 'forcella', 'cuffia']);
