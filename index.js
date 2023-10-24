@@ -139,6 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
     /* #region Auto */
     let fornitoriAuto = [];
 
+    // DURACELL - Conversione batterie da uso domestico
+    let duracell = new Fornitore('auto', 'Duracell', 'https://www.grithappens.com/mediadata/manufpdfs/duracell-2_1320692144.pdf', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Duracell_logo.svg/2560px-Duracell_logo.svg.png', false, []);
+    duracell.tags = tagGen(['duracell', 'energizer', 'pila', 'pile', 'batteria', 'batterie']);
+    fornitoriAuto.push(duracell);
+
     // BEM CODES - Genera codici per batterie a centralina elettronica
     let bem = new Fornitore('Auto', 'FIAMM-Codici', 'https://services.fiamm.com/FiammBEMCodes/login?BRAND=FIAMM&LANG=IT', 'https://www.fiamm.com/fileadmin/_processed_/d/f/csm_Logo_FIAMM_YWOE_flag_eb1a1c52dd.png', true, []);
     bem.tags = tagGen(['auto', 'bem', 'fiamm', 'codici', 'centralina', 'codice', 'elettronica', 'start', 'stop', 'start e stop']);
@@ -207,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Kuhner - Alternatori e motori avviamento per auto e veicoli commerciali
     let kuhner = new Fornitore('Auto', 'Kühner', 'https://ecomm.daseurope.com', 'https://www.kuhner.it/img/logo.png', true, []);
-    kuhner.tags = tagGen(['auto', 'kuhner', 'kühner', 'motorini avviamento', 'avviamento', 'starter', 'alternatori']);
+    kuhner.tags = tagGen(['auto', 'kuhner', 'kühner', 'motorini avviamento', 'avviamento', 'starter', 'alternatori', 'das']);
     fornitoriAuto.push(kuhner);
 
     // LAMPA - Accessori di qualsiasi tipo di veicolo, usato per lo più per auto
@@ -245,6 +250,11 @@ document.addEventListener('DOMContentLoaded', () => {
     /* #region Moto */
 
     let fornitoriMoto = [];
+
+    // GIUGO - Ricambi originali Malaguti
+    let giugo = new Fornitore('Moto', 'Giugo', 'https://www.giugoricambibologna.com/it/', 'https://www.giugoricambibologna.com/static/malaguti/images/logo-giugo.png', true, []);
+    giugo.tags = tagGen(['moto', 'giugo', 'malaguti', 'ricambio', 'originale', 'originali']);
+    fornitoriMoto.push(giugo);
 
     // DOMINO - Manopole
     let domino = new Fornitore('Moto', 'Tommaselli', 'https://www.domino-group.com/reserved-area/', 'https://www.domino-group.com/tommaselli/img/logo/Logo-Tommaselli.png', true, []);
