@@ -139,6 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
     /* #region Auto */
     let fornitoriAuto = [];
 
+    // AKRON-MALO - Gomme, manicotti, soffietti, pezzi di ricambio generici
+    let malo = new Fornitore('Auto', 'Akron-Malò', 'https://b2b.malospa.it', 'https://b2b.malospa.it/ImagesNoCache/logo.png', true, []);
+    malo.tags = tagGen(['auto', 'akron-malò', 'akron-malo', 'malò', 'malo', 'gomma', 'gomme', 'manicotto', 'manicotti', 'soffietto', 'soffietti', 'ricambio'])
+    fornitoriAuto.push(malo);
+
     // DURACELL - Conversione batterie da uso domestico
     let duracell = new Fornitore('auto', 'Duracell', 'https://www.grithappens.com/mediadata/manufpdfs/duracell-2_1320692144.pdf', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Duracell_logo.svg/2560px-Duracell_logo.svg.png', false, []);
     duracell.tags = tagGen(['duracell', 'energizer', 'pila', 'pile', 'batteria', 'batterie']);
