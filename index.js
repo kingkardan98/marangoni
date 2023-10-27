@@ -251,6 +251,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let fornitoriMoto = [];
 
+    // OEM PARTS - Esplosi
+    let oemparts = new Fornitore('Moto', 'OEMParts', 'https://www.oemmotorparts.com/en/', 'https://www.oemmotorparts.com/images/oem-logo.png', false, []);
+    oemparts.tags = tagGen(['moto', 'oem', 'parts', 'esplosi', 'tavole', 'ktm', 'peugeout', 'pegeout']);
+    fornitoriMoto.push(oemparts);
+
     // GIUGO - Ricambi originali Malaguti
     let giugo = new Fornitore('Moto', 'Giugo', 'https://www.giugoricambibologna.com/it/', 'https://www.giugoricambibologna.com/static/malaguti/images/logo-giugo.png', true, []);
     giugo.tags = tagGen(['moto', 'giugo', 'malaguti', 'ricambio', 'originale', 'originali']);
