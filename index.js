@@ -255,11 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
     /* #region Moto */
 
     let fornitoriMoto = [];
-
-    // MOTORTEAM - Ricambi Piaggio, Aprilia, Moto Guzzi
-    let motorteam = new Fornitore('Moto', 'Motorteam', 'http://www.mteservice.it/', 'http://www.mteservice.it/icons/logo.png', true, []);
-    motorteam.tags = tagGen(['moto', 'motorteam', 'piaggio', 'aprilia', 'guzzi', 'originali', 'ricambi', 'parti']);
-    fornitoriMoto.push(motorteam);
         
     // OEM PARTS - Esplosi
     let oemparts = new Fornitore('Moto', 'OEMParts', 'https://www.oemmotorparts.com/en/', 'https://www.oemmotorparts.com/images/oem-logo.png', false, []);
