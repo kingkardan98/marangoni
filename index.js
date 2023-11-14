@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let malo = new Fornitore('Auto', 'Akron-Malò', 'https://b2b.malospa.it', 'https://b2b.malospa.it/ImagesNoCache/logo.png', true, []);
     malo.tags = tagGen(['auto', 'akron-malò', 'akron-malo', 'malò', 'malo', 'gomma', 'gomme', 'manicotto', 'manicotti', 'soffietto', 'soffietti', 'ricambio'])
     fornitoriAuto.push(malo);
-
+    
     // DURACELL - Conversione batterie da uso domestico
     let duracell = new Fornitore('auto', 'Duracell', 'https://www.grithappens.com/mediadata/manufpdfs/duracell-2_1320692144.pdf', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Duracell_logo.svg/2560px-Duracell_logo.svg.png', false, []);
     duracell.tags = tagGen(['duracell', 'energizer', 'pila', 'pile', 'batteria', 'batterie']);
@@ -256,6 +256,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let fornitoriMoto = [];
 
+    // MOTORTEAM - Ricambi Piaggio, Aprilia, Moto Guzzi
+    let motorteam = new Fornitore('Moto', 'Motorteam', 'http://www.mteservice.it/', 'http://www.mteservice.it/icons/logo.png', true, []);
+    motorteam.tags = tagGen(['moto', 'motorteam', 'piaggio', 'aprilia', 'guzzi', 'originali', 'ricambi', 'parti']);
+    fornitoriMoto.push(motorteam);
+        
     // OEM PARTS - Esplosi
     let oemparts = new Fornitore('Moto', 'OEMParts', 'https://www.oemmotorparts.com/en/', 'https://www.oemmotorparts.com/images/oem-logo.png', false, []);
     oemparts.tags = tagGen(['moto', 'oem', 'parts', 'esplosi', 'tavole', 'ktm', 'peugeout', 'pegeout']);
