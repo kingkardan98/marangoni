@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fornitoriMoto.push(motocrossMarketing);
 
     // Malossi - Articoli Malossi: molle, massette, frizione, multivar, filtri
-    let malossi = new Fornitore('Moto', 'Malossi', 'https://www.malossicommerce.com/Account/Login?ReturnUrl=%2F', 'https://upload.wikimedia.org/wikipedia/it/c/c8/Malossi.logo.jpg', true, []);
+    let malossi = new Fornitore('Moto', 'Malossi', 'https://new.malossicommerce.com/', 'https://upload.wikimedia.org/wikipedia/it/c/c8/Malossi.logo.jpg', true, []);
     malossi.tags = tagGen(['moto', 'malossi', 'massette', 'pistoni', 'gruppo termico', 'multivar', 'frizione', 'cilindro', 'filtro rosso', 'rosso', 'conico', 'filtri']);
     fornitoriMoto.push(malossi);
 
