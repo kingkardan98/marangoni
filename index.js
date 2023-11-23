@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fornitoriMoto.push(mentasti);
 
     // R.TECH - Fornitore paramani, 
-    let rtech = new Fornitore('Moto', 'RaceTech', 'https://www.rtechmx.com/', 'https://www.rtechmx.com/pub/media/logo/stores/1/logo-rtech-ok.png', false, []);
+    let rtech = new Fornitore('Moto', 'RaceTech', 'https://business.rtechmx.com/login', 'https://www.rtechmx.com/pub/media/logo/stores/1/logo-rtech-ok.png', false, []);
     rtech.tags = tagGen(['moto', 'racetech', 'rtech', 'paramani', 'tappi', 'tappo', 'serbatoio', 'scarico', 'olio', 'tanica', 'taniche']);
     fornitoriMoto.push(rtech);
 
