@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // SPARK PLUG CROSS REFERENCE - Tool di conversione per candele di diverse marche
     let sparkPlug = new Fornitore('Moto', 'SparkPlug', 'https://www.sparkplug-crossreference.com/', 'https://seeklogo.com/images/N/ngk-logo-93069CD40C-seeklogo.com.png', false, []);
-    sparkPlug.tags = tagGen(['moto', 'candele', 'confronto', 'ngk']);
+    sparkPlug.tags = tagGen(['moto', 'candele', 'confronto', 'ngk', 'spark', 'plug', 'sparkplug', 'cross', 'reference']);
     fornitoriMoto.push(sparkPlug);
 
     // BRAKING - Configuratore sistemi frenanti moto
