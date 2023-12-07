@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // SDR - Ricambi auto originali per vari marchi
     let sdr = new Fornitore('Auto', 'SDR', 'https://online.societadistribuzionericambi.it', 'https://media.licdn.com/dms/image/C4E0BAQF130Z6_Xp8hA/company-logo_200_200/0/1630644006470?e=2147483647&v=beta&t=bk63fKRrJJikyIfwFiA6U7PhjPviGOTn9pWThg5Uvxs', true, [])
-    sdr.tags = tagGen(['auto', 'sdr', 'originali', 'ricambi', 'societa', 'società', 'distribuzione', 'ricambi', 'peugeot', 'citroen', 'ds', 'opel', 'forwelt', 'suzuki', 'honda', 'mazda', 'alfa', 'romeo', 'jeep', 'fiat', 'fca', 'lancia', 'abarth']);
+    sdr.tags = tagGen(['auto', 'sdr', 'originali', 'ricambi', 'societa', 'società', 'distribuzione', 'ricambi', 'peugeot', 'citroen', 'ds', 'opel', 'forwelt', 'suzuki', 'honda', 'mazda', 'alfa', 'romeo', 'jeep', 'fiat', 'fca', 'lancia', 'abarth', 'eurorepar']);
     fornitoriAuto.push(sdr);
 
     // AKRON-MALO - Gomme, manicotti, soffietti, pezzi di ricambio generici
