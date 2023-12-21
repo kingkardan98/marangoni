@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fornitoriAuto.push(laPrealpina);
 
     // DAYCO - Sistemi di distribuzione veicoli
-    let dayco = new Fornitore('Auto', 'Dayco', 'https://www.daycoaftermarket.com/it/catalog/', 'https://www.daycoaftermarket.com/wp-content/uploads/Dayco_Logo_MFA_White_Header.png', false, []);
+    let dayco = new Fornitore('Auto', 'Dayco', 'https://www.daycoaftermarket.com/it/catalog/', 'https://www.michelecaroli.com/wp-content/uploads/2018/12/dayco-b2.png', false, []);
     dayco.tags = tagGen(['auto', 'dayco', 'cinghia', 'cinghie',' distribuzione', 'kit', 'tendicinghia', 'galoppino', 'raffreddamento', 'pompa', 'acqua', 'cuscinetto', 'cuscinetti', 'ruota', 'biella', 'bielle']);
     fornitoriAuto.push(dayco);
 
