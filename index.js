@@ -1,4 +1,4 @@
-// Copyright © 2016 kingkardan98
+// Copyright © 2023 kingkardan98
 
 /* #region Aux functions */
 function sortForn(array) {
@@ -260,7 +260,12 @@ document.addEventListener('DOMContentLoaded', () => {
     /* #region Moto */
 
     let fornitoriMoto = [];
-        
+
+    // MOTORTEAM - Fornitore Piaggio
+    let motorteam = new Fornitore('Moto', 'MotorTeam', 'https://powerb.motorteampiaggio.it:4403', 'https://www.stickersmurali.com/it/img/vesp023-png/folder/products-detalle-png/adesivi-scudo-piaggio.png', false, []);
+    motorteam.tags = tagGen(['moto', 'motorteam', 'piaggio']);
+    fornitoriMoto.push(motorteam);
+
     // OEM PARTS - Esplosi
     let oemparts = new Fornitore('Moto', 'OEMParts', 'https://www.oemmotorparts.com/en/', 'https://www.oemmotorparts.com/images/oem-logo.png', false, []);
     oemparts.tags = tagGen(['moto', 'oem', 'parts', 'esplosi', 'tavole', 'ktm', 'peugeout', 'pegeout']);
@@ -373,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fornitoriMoto.push(motocrossMarketing);
 
     // Malossi - Articoli Malossi: molle, massette, frizione, multivar, filtri
-    let malossi = new Fornitore('Moto', 'Malossi', 'https://www.malossicommerce.com/', 'https://upload.wikimedia.org/wikipedia/it/c/c8/Malossi.logo.jpg', true, []);
+    let malossi = new Fornitore('Moto', 'Malossi', 'https://www.malossistore.com/', 'https://upload.wikimedia.org/wikipedia/it/c/c8/Malossi.logo.jpg', true, []);
     malossi.tags = tagGen(['moto', 'malossi', 'massette', 'pistoni', 'gruppo termico', 'multivar', 'frizione', 'cilindro', 'filtro rosso', 'rosso', 'conico', 'filtri']);
     fornitoriMoto.push(malossi);
 
@@ -638,5 +643,5 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     /* #endregion */
 
-    // Copyright © 2016 kingkardan98
+    // Copyright © 2023 kingkardan98
 })
