@@ -393,7 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fornitoriMoto.push(braking);
 
     // Dell'Orto - Ricambi specifici per carburatori Dell'Orto
-    let dellOrto = new Fornitore('Moto', "DellOrto", 'http://ricambi.dellorto.it/login', 'http://ricambi.dellorto.it/images/logo.png', true, []);
+    let dellOrto = new Fornitore('Moto', "DellOrto", 'http://ricambi.dellorto.it/login', 'https://www.dellorto.it/wp-content/uploads/2020/11/Loghi-india-e-cina-sito_dellorto-2.png', true, []);
     dellOrto.tags = tagGen(['moto', "dell'orto", 'orto', 'carburatore', 'getto', 'kit', 'gigler', 'spillo', 'guarnizioni', 'starter', 'mb', 'galleggiante', 'ricambi']);
     fornitoriMoto.push(dellOrto);
 
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fornitoriMoto.push(polini);
 
     // TEKNO ETRE SAS - Collettori
-    let etre = new Fornitore('Moto', 'ETRE', 'http://www.teknoetre.it/Elencoprodotti/Elenco%20prodotti.htm', 'http://www.teknoetre.it/Images/marchio-2006-teknoetre.jpg', false, []);
+    let etre = new Fornitore('Moto', 'ETRE', 'http://www.teknoetre.it/Elencoprodotti/Elenco%20prodotti.htm', 'https://www.italricambibruscino.it/img/m/123.jpg', false, []);
     etre.tags = tagGen(['etre', 'tekno etre', 'moto', 'collettore', 'collettori']);
     fornitoriMoto.push(etre);
 
@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fornitoriMoto.push(ng);
 
     // FAR - Specchietti e frecce moto
-    let far = new Fornitore('Moto', 'FAR', 'http://93.39.77.114/SilverLakeMe/Login.aspx', 'http://93.39.77.114/SilverLakeMe/images/LogoFar.png', true, []);
+    let far = new Fornitore('Moto', 'FAR', 'http://93.39.77.114/SilverLakeMe/Login.aspx', 'https://far.it/wp-content/uploads/2020/04/logo_far.png', true, []);
     far.tags = tagGen(['moto', 'far', 'specchio', 'specchi', 'specchietto', 'specchietti', 'frecce', 'freccia', 'led']);
     fornitoriMoto.push(far);
 
@@ -493,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fornitoriMoto.push(biondi);
 
     // FACO - Portapacchi e parabrezza
-    let faco = new Fornitore('Moto', 'Faco', 'http://www.facosrl.com/scooter/?Tipo=1&CodCat=1', 'http://faco.next-informatica.it/wp-content/uploads/2021/09/Logo.png', false, []);
+    let faco = new Fornitore('Moto', 'Faco', 'https://www.facosrl.com', 'https://www.facosrl.com/wp-content/uploads/brizy/imgs/Logo-211x90x0x0x211x90x1631193598.png', false, []);
     faco.tags = tagGen(['moto', 'faco', 'parabrezza', 'portapacchi']);
     fornitoriMoto.push(faco);
 
